@@ -1,0 +1,23 @@
+.row {
+    margin-bottom: 20px;
+}
+
+.flex-center-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-blocks-row {
+    margin-bottom: 20px;
+    background-color: gainsboro;
+}
+
+.color-blocks-row .row-content {
+    background-color: white;
+}
+
+.dark-row {
+    background-color: #B0A59E;
+    margin-bottom: 20px;
+}
