@@ -18,5 +18,6 @@
     }
     img {
         margin-bottom: 50px;
+        width: 100%;
     }
 </style>
