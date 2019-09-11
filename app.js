@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import TopMenu from './vue/top-menu.component.vue'
-import KimAndreasImage from './vue/kim-andreas-image.component.vue'
-import Invitation from './vue/invitation.component.vue'
-import Us from './vue/us.component.vue'
+import ColorBlockRow from './vue/color-block-row.component.vue'
+import DarkRow from './vue/dark-row.component.vue'
+import LightRow from './vue/light-row.component.vue'
 
 const app = new Vue({ 
     el: '#app',
     components: {
         'top-menu': TopMenu,
-        'kim-andreas-image': KimAndreasImage,
-        'invitation': Invitation,
-        'us': Us
+        'colorBlockRow': ColorBlockRow,
+        'darkRow': DarkRow,
+        'lightRow': LightRow
     }
 })

@@ -2,8 +2,8 @@ body {
     font-family: 'Nanum Myeongjo', serif;
 }
 
-.row {
-    margin-bottom: 20px;
+.image-row {
+    margin-bottom: 15px;
 }
 
 .flex-center-container {
@@ -17,21 +17,15 @@ body {
     padding-bottom: 50px;
 }
 
-.color-blocks-row {
-    background-color: gainsboro;
-}
-
-.color-blocks-row .row-content {
-    background-color: white;
-}
-
 .dark-row {
     background-color: gray;
     color: white;
+    margin-bottom: 15px;
 }
 
 .text-container {
     width: 60%;
+    padding: 0 10px 50px 10px;
 }
 
 .text-center {
@@ -44,4 +38,19 @@ body {
     grid-template-rows: auto;
     grid-template-areas: "left right";
     grid-column-gap: 50px;
+}
+
+.wide-image {
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    img {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1025px) {
+    img {
+        width: 100%;
+    }
 }
