@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-center-container">
+    <div class="flex-center-container content-row">
         <img class="kim-andreas-branch"
              src="../assets/branchWithNames.png"
              alt="Kim & Andreas 2020">
@@ -16,8 +16,9 @@
             width: 50%;
         }
     }
-    img {
-        margin-bottom: 50px;
-        width: 100%;
+    @media screen and (max-width: 1025px) {
+        img {
+            width: 100%;
+        }
     }
 </style>

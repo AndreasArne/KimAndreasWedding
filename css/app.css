@@ -1,5 +1,5 @@
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 .row {
@@ -13,8 +13,11 @@ body {
     align-items: flex-start;
 }
 
+.content-row {
+    padding-bottom: 50px;
+}
+
 .color-blocks-row {
-    margin-bottom: 20px;
     background-color: gainsboro;
 }
 
@@ -25,13 +28,20 @@ body {
 .dark-row {
     background-color: gray;
     color: white;
-    margin-bottom: 20px;
 }
 
 .text-container {
-    width: 70%;
+    width: 60%;
 }
 
 .text-center {
     text-align: center;
+}
+
+.two-part-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+    grid-column-gap: 50px;
 }
