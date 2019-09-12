@@ -1,0 +1,42 @@
+[
+   {
+      'guests':[
+         {
+            'name':'Andreas Arnesson',
+            'coming':None,
+            'drink':None,
+            'food':None,
+            'allergy':None
+         },
+         {
+            'name':'Kim Arnesson',
+            'coming':None,
+            'drink':None,
+            'food':None,
+            'allergy':None
+         }
+      ],
+      'id':'1b625ec6d5',
+      'email':'andrkeas@sfdd.com'
+   },
+   {
+      'guests':[
+         {
+            'name':'Per åke',
+            'coming':None,
+            'drink':None,
+            'food':None,
+            'allergy':None
+         },
+         {
+            'name':'Lisa lotta',
+            'coming':None,
+            'drink':None,
+            'food':None,
+            'allergy':None
+         }
+      ],
+      'id':'1b76df7cd5',
+      'email':'snoffsan@sfdd.com'
+   }
+]
