@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Origin: *
+
+{
+    "guests":[
+        {
+        "name":"Andreas Arnesson",
+        "coming": null,
+        "drink":null,
+        "food":null,
+        "allergy":null
+        },
+        {
+        "name":"Kim Arnesson",
+        "coming":null,
+        "drink":null,
+        "food":null,
+        "allergy":null
+        }
+    ],
+    "id":"1b625ec6d5",
+    "email":"andrkeas@sfdd.com"
+}
