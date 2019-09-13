@@ -11,7 +11,7 @@
             </form>
             <div class="text-center">
                 <button class="button" type="button" v-on:click="submitHash(hash)">Ok</button>
-                <button class="button">Avbryt</button>
+                <button class="button" v-on:click="cancel">Avbryt</button>
             </div>
         </div>
         <div v-if="party">
@@ -28,7 +28,7 @@
             </form>
             <div class="text-center">
                 <button class="button" v-on:click="register">Anmäl</button>
-                <button class="button">Avbryt</button>
+                <button class="button" v-on:click="cancel">Avbryt</button>
             </div>
         </div>
     </dark-row>
@@ -65,7 +65,10 @@ export default {
             })
         },
         register: function() {
-            console.log(this.party.guests);
+            console.log(this.party.guests)
+        },
+        cancel: function() {
+            window.location.href = '../'
         }
     },
     components: {

@@ -20,7 +20,7 @@
                 <h2>Boende</h2>
                 <p>Vi har bokat en pool av rum för er som reser långväga. Boka rum här länk</p>
                 <h2>OSA</h2>
-                <p>OSA senast den blablabla</p>
+                <p>OSA senast den blabla. OSA kan du göra <a href="./osa">här</a></p>
             </div>
         </div>
     </color-block-row>
