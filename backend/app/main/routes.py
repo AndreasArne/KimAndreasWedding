@@ -1,6 +1,7 @@
 """
 Contains routes for main purpose of app
 """
+import os
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request, current_app
 from flask_login import current_user, login_required
@@ -18,14 +19,18 @@ def create_party():
     Route for creating parties
     """
     data = request.get_json()
+    if data["id"] != os.environ.get('SECRET_CREATE_KEY'):
+        current_app.logger.debug("Wrong identifictation: {}".format(data))
+        return "Wrong identification", 401
+        
     result = {
         "new": [],
         "existing": [],
     }
     respons = result, 200
-    if isinstance(data, list):
+    if isinstance(data, dict):
         try:
-            for party_data in data:
+            for party_data in data["parties"]:
                 current_app.logger.debug("POST data: {}".format(party_data))
                 try:
                     existing_party = Party.query.filter_by(email=party_data["email"]).one()
@@ -40,7 +45,7 @@ def create_party():
                 current_app.logger.error(str(e))
                 return CONTACT_MSG, 500
     else:
-        return "Submit data as list", 406
+        return "Submit data as dict", 406
     return respons
 
 
@@ -56,23 +61,28 @@ def update_party():
         current_app.logger.debug("PUT data: {}".format(data))
         try:
             party = Party.query.filter_by(id=data["id"]).one()
+            if party.osa:
+                return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
             current_app.logger.debug("Party found {}".format(party.to_dict()))
             party.update_party(data)
             db.session.commit()
             respons = party.to_dict(), 200
         except orm.exc.NoResultFound as e:
-            respons = ("Party with id {} doesnt exist, using email {}".format(
+            respons = ("Hittar inte id {}. {}".format(
                     data["id"],
-                    data["email"],
+                    CONTACT_MSG,
                 ), 
-                400)
-            current_app.logger.warning(respons)
+                404
+            )
+            current_app.logger.warning("Party with id {} doesnt exist, using email {}".format(data["id"], data["email"]))
             current_app.logger.debug(str(e))
-            respons = CONTACT_MSG, 404
             db.session().rollback()
         except ValueError as e:
             current_app.logger.debug(str(e))
-            respons = CONTACT_MSG, 404
+            if "Hittar ingen gäst med namnet" in str(e):
+                respons = (str(e) + CONTACT_MSG, 400)
+            else:
+                respons = CONTACT_MSG, 500
             db.session().rollback()
     else:
         return "Submit data as dict", 406
