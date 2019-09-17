@@ -18,6 +18,7 @@ class Party(UserMixin, db.Model):
     id = db.Column(db.String(6), unique=True)
     email = db.Column(db.String(120), primary_key=True)
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    osa = db.Column(db.Boolean)
     guests = db.relationship('Guest', backref='party', lazy='dynamic')
 
     @staticmethod
@@ -47,13 +48,14 @@ class Party(UserMixin, db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "osa": self.osa,
             "guests": [g.to_dict() for g in self.guests.all()],
         }
 
     @staticmethod
     def create_party(data):
         id_ = Party.create_id(data["email"])
-        party = Party(id=id_, email=data["email"])
+        party = Party(id=id_, email=data["email"], osa=False)
         db.session.add(party)
         for guest_data in data["guests"]:
             guest = Guest(name=guest_data["name"], party=party)
@@ -78,7 +80,11 @@ class Party(UserMixin, db.Model):
                     data["id"]
                 )
                 current_app.logger.warning(msg)
+                msg = "Hittar ingen gäst med namnet {}. ".format(
+                    guest_data["name"],
+                )
                 raise ValueError(msg)
+            self.osa = True
 
     @staticmethod
     @login.user_loader
@@ -95,7 +101,7 @@ class Guest(db.Model):
     Represents a Guest
     """
     name = db.Column(db.String(140), primary_key=True)
-    coming = db.Column(db.Boolean)
+    coming = db.Column(db.Boolean, nullable=True)
     food = db.Column(db.String(140))
     drink = db.Column(db.String(140))
     allergy = db.Column(db.String(255))
