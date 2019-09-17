@@ -12,8 +12,6 @@ from app.main import bp
 
 CONTACT_MSG = "Kontakta Kim eller Andreas"
 
-
-# @login_required 
 @bp.route('/create_party', methods=['POST'])
 def create_party():
     """
@@ -36,7 +34,7 @@ def create_party():
                 except orm.exc.NoResultFound:
                     party = Party.create_party(party_data)
                     current_app.logger.info("Created party: {}".format(party.to_dict()))
-                    result["new"].append(existing_party.to_dict())
+                    result["new"].append(party.to_dict())
             db.session.commit()
         except Exception as e:
                 current_app.logger.error(str(e))
