@@ -86,7 +86,7 @@ class Party(UserMixin, db.Model):
         """
         Return user base on id.
         """
-        return Party.query.get(int(id_))
+        return Party.query.get(id_)
 
 
 
