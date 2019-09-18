@@ -50,6 +50,35 @@ def create_party():
 
 
 
+@bp.route('/get_party', methods=['POST'])
+def get_party():
+    """
+    Route for retrieving a party
+    """
+    respons = "Success", 200
+    data = request.get_json()
+    if isinstance(data, dict):
+        current_app.logger.debug("POST data: {}".format(data))
+        try:
+            party = Party.query.filter_by(id=data["id"]).one()
+            if party.osa:
+                return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
+            current_app.logger.debug("Party found {}".format(party.to_dict()))
+            respons = party.to_dict(), 200
+        except orm.exc.NoResultFound as e:
+            respons = ("Hittar inte id {}. {}".format(
+                    data["id"],
+                    CONTACT_MSG,
+                ), 
+                404
+            )
+            current_app.logger.debug(str(e))
+    else:
+        return "Submit data as dict", 406
+    return respons
+
+
+
 @bp.route('/update_party', methods=['PUT'])
 def update_party():
     """
