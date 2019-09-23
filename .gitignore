@@ -1,6 +1,10 @@
 node_modules/
 build/
 
+emails.txt
+guests.json
+guests.txt
+
 .env
 app.db
 aws_keys.yml
