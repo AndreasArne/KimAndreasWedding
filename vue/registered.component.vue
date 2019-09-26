@@ -16,6 +16,7 @@
                 <p>{{ guest.allergy || "Ingen" }}</p>
             </div>
         </div>
+        <button class="button" v-on:click="home">Tillbaka till startsidan</button>
     </dark-row>
 </template>
 
@@ -46,6 +47,11 @@ export default {
         }).catch((err) => {
             console.log(err)
         })
+    },
+    methods: {
+        home: function() {
+            window.location.href = '../'
+        }
     },
     computed: {
         coming: function() {

@@ -167,9 +167,8 @@ const checkboxes = {
         border: solid gainsboro 1px;
     }
 
-    input[required] + label:after {
-        content: '*';
-        color: red;
+    input[type="radio"]:hover + label {
+        border-bottom: 1px solid white;
     }
 
     .guest-form {
