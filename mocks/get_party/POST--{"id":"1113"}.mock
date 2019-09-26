@@ -5,20 +5,20 @@ Access-Control-Allow-Origin: *
 {
     "guests":[
         {
-        "name":"Per åke",
-        "coming":null,
+        "name":"Andreas Arnesson",
+        "coming": false,
         "drink":null,
         "food":null,
         "allergy":null
         },
         {
-        "name":"Lisa lotta",
-        "coming":null,
+        "name":"Kim Arnesson",
+        "coming":false,
         "drink":null,
         "food":null,
         "allergy":null
         }
     ],
-    "id":"1b76df7cd5",
-    "email":"snoffsan@sfdd.com"
+    "id":"1b625ec6d5",
+    "email":"andrkeas@sfdd.com"
 }

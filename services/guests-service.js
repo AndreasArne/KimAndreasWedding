@@ -1,8 +1,5 @@
 export default class GuestsService {
-    constructor() {
-    }
-
-    makeRequest(method, url, responseType) {
+    makeRequest(method, url, responseType, data) {
         const request = new XMLHttpRequest();
 
         return new Promise((resolve, reject) => {
@@ -21,11 +18,16 @@ export default class GuestsService {
 
             request.open(method, url)
             request.responseType = responseType
-            request.send()
+            if (['PUT', 'POST'].includes(method)) request.setRequestHeader("Content-Type", "application/json")
+            data ? request.send(data) : request.send()
         });
     }
 
-    getMockGuests(hash) {
-        return this.makeRequest('GET', 'http://localhost:9000/guests?hash=' + hash, 'json')
+    getParty(hash) {
+        return this.makeRequest('POST', 'http://localhost:9000/get_party', 'json', JSON.stringify({"id":hash}))
+    }
+
+    putParty(hash, guests) {
+        return this.makeRequest('PUT', 'http://localhost:9000/update_party', 'json', JSON.stringify({"id":hash, "guests":guests}))
     }
 }

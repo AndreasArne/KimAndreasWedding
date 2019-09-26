@@ -2,8 +2,9 @@
     <dark-row>
         <div v-if="!party">
             <form class="" v-if="!party">
-                <h1 class="text-center">Skriv in din kod</h1>
-                <p class="text-center">Koden hittar du på ditt inbjudningskort.</p>
+                <h1 class="text-center">{{ texts.osaForm.hash.heading }}</h1>
+                <p class="text-center">{{ texts.osaForm.hash.help }}</p>
+                <p class="text-center error" v-for="error in errors" v-bind:key="error">{{ error }}</p>
                 <div class="text-center">
                     <label for="hash">Kod:</label>
                     <input v-model="hash" type="text" name="hash" id="hash">
@@ -17,16 +18,30 @@
         <div v-if="party">
             <form class="text-center">
                 <h1>Hej {{ guestNames }}!</h1>
-                <div v-for="guest in party.guests" v-bind:key="guest.name" class="text-center guest-form">
+                <div v-for="(guest, index) in party.guests" v-bind:key="guest.name" class="text-center guest-form">
                     <h2>{{ guest.name }}</h2>
-                    <radio-group :title="coming.text" :contentObject="coming.values" v-model="guest.coming"></radio-group>
-                    <radio-group v-for="(checkbox, key) in checkboxes" v-bind:key="checkbox.text" :title="checkbox.text" :contentObject="checkbox.values" v-model="guest[key]"></radio-group>
-                    <h3>Har du några allergier?</h3>
-                    <label for="allergies">Allergier:</label>
-                    <input type="text" name="allergy" id="allergy" v-model="guest.allergy">
+                    <radio-group :title="coming.text"
+                        :contentObject="coming.values"
+                        :required="true"
+                        :name="'coming' + index"
+                        v-model="guest.coming"></radio-group>
+                    <div v-if="guest.coming !== false">
+                        <radio-group 
+                        v-for="(checkbox, key) in checkboxes"
+                        v-bind:key="checkbox.text"
+                        required="true"
+                        :title="checkbox.text"
+                        :name="key + index"
+                        :contentObject="checkbox.values" v-model="guest[key]"></radio-group>
+                        <h3>{{ texts.osaForm.allergy.heading }}</h3>
+                        <label for="allergies">Allergier:</label>
+                        <input type="text" name="allergy" id="allergy" v-model="guest.allergy">
+                        <div class="air" v-if="index < party.guests.length - 1"></div> 
+                    </div>
                 </div>
             </form>
             <div class="text-center">
+                <p class="error" v-for="error in errors" v-bind:key="error">{{ error }}</p>
                 <button class="button" v-on:click="register">Anmäl</button>
                 <button class="button" v-on:click="cancel">Avbryt</button>
             </div>
@@ -38,6 +53,7 @@
 import DarkRow from './dark-row.component.vue'
 import GuestsService from '../services/guests-service.js'
 import RadioGroup from './radioGroup.component.vue'
+import texts from '../texts.js'
 
 export default {
     data: function() {
@@ -47,28 +63,55 @@ export default {
             guestsService: new GuestsService(),
             checkboxes: checkboxes,
             coming: {
-                text: 'Kommer du på bröllopet?',
-                values: { 'attending': { name: 'Ja, jag kommer', value: true }, 'notAttending': { name: 'Nej, jag kommer inte', value: false} }
+                text: texts.osaForm.coming.heading,
+                values: { 'attending': { name: texts.osaForm.coming.answer[true], value: true },
+                    'notAttending': { name: texts.osaForm.coming.answer[false], value: false} }
             },
+            errors: [],
+            texts: texts
         }
     },
     methods: {
         submitHash: function(hash) {
-            this.getGuests(hash);
+            if (hash && hash.length === 4) {
+                this.getParty(hash);
+                this.errors = [];
+            } else {
+                this.errors.push('Koden är inte korrekt')
+            }
         },
-        getGuests: function(hash) {
-            return this.guestsService.getMockGuests(hash).then((response) => {
+        getParty: function(hash) {
+            return this.guestsService.getParty(hash).then((response) => {
+                if (response.guests.some((guest) => guest.coming)) {
+                    this.errors.push('Ni har redan svarat på inbjudan. Undrar ni något eller vill ändra något, hör av er till Kim och Andreas')
+                    return  
+                }
+
                 this.party = response;
-                this.guestNames = this.party.guests.map((guest) => guest.name).join(', ')
+                this.guestNames = this.party.guests.map((guest) => { 
+                    guest.allergy = ""
+                    return guest.name }).join(', ')
             }).catch((err) => {
-                console.log(err)
+                this.errors.push('Koden är inte korrekt')
             })
         },
         register: function() {
-            console.log(this.party.guests)
+            this.errors = [];
+            if (validateParty(this.party)) {
+                this.guestsService.putParty(this.hash, this.party).then((response) => {
+                    window.location.href = '../registered?hash=' + this.hash 
+                }).catch(() => {
+                    this.errors.push('Något gick fel. Försök igen eller kontakta Kim och Andreas')
+                });
+            } else {
+                this.errors.push('Du måste fylla i alla fält')
+            }
         },
         cancel: function() {
             window.location.href = '../'
+        },
+        validateGuest: function(guest) {
+            return validateGuest(guest)
         }
     },
     components: {
@@ -77,19 +120,30 @@ export default {
     }
 }
 
+function validateParty(party) {
+    return party.guests.every(guest => validateGuest(guest))
+}
+
+function validateGuest(guest) {
+    return guest.coming === false || !Object.values(guest).some(value => value === null || value === undefined)
+}
+
 const checkboxes = {
     food: {
-        text: 'Vad vill du äta?', 
-        values: { 'meat': { name: 'Kött', value: 'meat' }, 'fish': { name: 'Fisk', value: 'fish' }, 'veg': { name: 'Vegetariskt', value: 'veg'} }
+        text: texts.osaForm.food.heading, 
+        values: { 'meat': { name: texts.osaForm.food.answer.meat, value: 'meat' },
+            'fish': { name: texts.osaForm.food.answer.fish, value: 'fish' },
+            'veg': { name: texts.osaForm.food.answer.veg, value: 'veg'} }
     },
     drink: {
-        text: 'Vill du ha dryck med eller utan alkohol',
-        values: { 'alcohol': { name: 'Ja, jag vill ha alkohol', value: true }, 'notAlcohol': { name: 'Nej, jag vill inte ha alkohol', value: false } }
+        text: texts.osaForm.drink.heading,
+        values: { 'alcohol': { name: texts.osaForm.drink.answer[true], value: true },
+            'notAlcohol': { name: texts.osaForm.drink.answer[false], value: false } }
     }
 }
 </script>
 
-<style scoped>
+<style>
     button {
         background: none;
         border-bottom: none;
@@ -108,13 +162,30 @@ const checkboxes = {
         color: black;
     }
 
-    input {
+    input[type="text"] {
         padding: 10px;
-        margin: 15px;
         border: solid gainsboro 1px;
     }
 
+    input[required] + label:after {
+        content: '*';
+        color: red;
+    }
+
     .guest-form {
-        margin-top: 50px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+
+    .guest-form:not(:last-child) {
+        margin-bottom: 50px;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .required::after {
+        content: "*"
     }
 </style>

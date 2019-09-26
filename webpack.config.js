@@ -7,7 +7,6 @@ module.exports = {
     resolve: {
         alias: { vue: './node_modules/vue/dist/vue.esm.js'}
     },
-    mode: 'development',
     watch: true,
     output: {
         path: path.resolve(__dirname, 'build'),
