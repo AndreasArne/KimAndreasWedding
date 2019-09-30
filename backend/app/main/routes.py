@@ -116,3 +116,36 @@ def update_party():
     else:
         return "Submit data as dict", 406
     return respons
+
+
+
+@bp.route('/get_invitations', methods=['POST'])
+def get_invitations():
+    """
+    Route for retrieving all invitations
+    """
+    respons = "Success", 200
+    data = request.get_json()
+    if data["id"] != os.environ.get('SECRET_CREATE_KEY'):
+        current_app.logger.debug("Wrong identifictation: {}, key {}".format(data, os.environ.get('SECRET_CREATE_KEY')))
+        return "Wrong identification", 401
+
+    if isinstance(data, dict):
+        current_app.logger.debug("POST data: {}".format(data))
+        try:
+            all_party = Party.query.all()
+            current_app.logger.debug("{} Party found".format(len(all_party)))
+            all_party_dict = {
+                "party": [ p.to_dict() for p in all_party],
+            }
+            respons = all_party_dict, 200
+        except orm.exc.NoResultFound as e:
+            respons = ("Inga party tillagda {}. {}".format(
+                    CONTACT_MSG,
+                ),
+                403
+            )
+            current_app.logger.debug(str(e))
+    else:
+        return "Submit data as dict", 406
+    return respons
