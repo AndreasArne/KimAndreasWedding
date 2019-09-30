@@ -1,0 +1,41 @@
+---
+
+-   name: Install packages
+    apt:
+        name: "{{ packages }}"
+        state: present
+
+-   name: Check if certificate already exists.
+    stat:
+        path: /etc/letsencrypt/live/{{ domain_name }}/cert.pem
+    register: letsencrypt_cert
+
+-   debug: msg="{{ letsencrypt_cert.stat.exists }}"
+
+-   name: Stop services to allow certbot to generate a cert.
+    command: service nginx stop
+    when: not letsencrypt_cert.stat.exists
+
+-   name: Generate new certificate if one doesn't exist.
+    shell: "certbot certonly --standalone --noninteractive --expand --agree-tos --email {{ admin_email }} -d {{ puny_domain }} -d www.{{ puny_domain }}"
+    when: not letsencrypt_cert.stat.exists
+
+-   name: Remove default conf
+    file:
+        state: absent
+        path: /etc/nginx/sites-enabled/default
+
+-   name: Template nginx site config to server
+    template:
+        src: wedding.conf.j2
+        dest: /etc/nginx/sites-available/wedding.conf
+
+-   name: Link site to enabled
+    file:
+        state: link
+        force: yes
+        src: /etc/nginx/sites-available/wedding.conf
+        path: /etc/nginx/sites-enabled/wedding.conf
+
+-   name: Start services after cert has been generated.
+    command: service nginx restart

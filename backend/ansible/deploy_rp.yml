@@ -1,0 +1,9 @@
+---
+    -   hosts: wedding
+        remote_user: "{{ server_user }}"
+        become: yes
+        become_method: sudo
+        vars_files:
+            -    aws_keys.yml
+        roles:
+            -   deploy_rp

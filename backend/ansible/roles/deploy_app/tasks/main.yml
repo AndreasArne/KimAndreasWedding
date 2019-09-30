@@ -1,0 +1,115 @@
+---
+-   name: Install dependencies
+    become: yes
+    become_method: sudo
+    apt:
+        state: present
+        pkg: "{{ apt_packages}}"
+
+-   name: Get latest app release
+    uri:                                                               
+        url: https://api.github.com/repos/andreasarne/KimAndreasWedding/releases/latest
+        return_content: true                                             
+    register: json_reponse 
+    delegate_to: 127.0.0.1                                            
+
+-   name: ensure app directory exists
+    file:
+        path: "{{ user_home }}/{{ item }}"
+        state: directory
+    with_items:
+        -   tmp
+        -   app
+
+-   name: Unarchive a file that needs to be downloaded
+    unarchive:
+        src: "{{ json_reponse.json.tarball_url }}"
+        dest: "{{ user_home }}/tmp"
+        remote_src: yes
+        mode: "755"
+
+-   name: Move app content from tmp to app folder
+    command: "find {{ user_home }}/tmp -mindepth 2 -maxdepth 2 -type d,f -print -exec mv {} {{ app_root }} ;"
+
+-   name: Remove tmp folder
+    file:
+        path: "{{ user_home }}/tmp"
+        state: absent
+
+-   name: Install requirements
+    pip:
+        requirements: "{{ app_root }}/backend/requirements.txt"
+        virtualenv: "{{ app_root }}/backend/venv"
+        virtualenv_command: /usr/bin/python3.5 -m venv
+
+-   name: Set FLASK_APP in .profile
+    lineinfile:
+        path: "{{ user_home }}/.profile"
+        regexp: '^export FLASK_APP'
+        line: "export FLASK_APP={{ app_file }}"
+
+-   name: Ensure app .env exist
+    file:
+        path: "{{ app_root}}/backend/.env"
+        state: touch
+
+-   name: Generate secret key for Flask
+    command: 'python3 -c "import uuid; print(uuid.uuid4().hex)"'
+    register: secret_key
+
+-   name: Set FLask env vars
+    lineinfile:
+        path: "{{ app_root}}/backend/.env"
+        regexp: '{{ item.regexp }}'
+        line: "{{ item.line }}"
+    with_items: "{{ flask_env_vars }}"
+
+-   name: Init DB
+    shell: "cd {{ app_root }}/backend && \
+        . venv/bin/activate && \
+        flask db init"
+    ignore_errors: yes
+    register: db_init_status
+
+# - debug: msg="{{db_init_status}}"
+
+-   name: Migrate DB
+    shell: "cd {{ app_root }}/backend && \
+        . venv/bin/activate && \
+        flask db migrate"
+    ignore_errors: yes
+    when: db_init_status
+    register: db_migrate_status
+
+# -   debug: msg="{{ db_migrate_status }}"
+
+-   name: Stamp head and Migrate DB # https://stackoverflow.com/questions/42992256/how-do-you-add-migrate-an-existing-database-with-alembic-flask-migrate-if-you-di
+    shell: "cd {{ app_root }}/backend && \
+        . venv/bin/activate && \
+        flask db stamp head && flask db migrate"
+    when: '"Target database is not up to date" in db_migrate_status.stderr'
+    register: db_migrate_status
+
+-   name: Upgrade DB
+    shell: "cd {{ app_root }}/backend && \
+        . venv/bin/activate && \
+        flask db upgrade"
+
+- name: Create a gunicorn log dir
+  become: yes
+  become_method: sudo
+  file:
+    path: /var/log/wedding
+    state: directory
+    mode: '0755'
+    owner: "{{ server_user }}"
+
+-   name: Copy supervisor.conf
+    become: yes
+    become_method: sudo
+    template:
+        src:  supervisor.conf.j2
+        dest: /etc/supervisor/conf.d/wedding.conf
+        owner: deploy
+        mode: 0755
+    notify: restart supervisor

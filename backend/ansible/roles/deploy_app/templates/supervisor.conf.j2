@@ -1,0 +1,8 @@
+[program:wedding]
+command={{ app_root }}/backend/venv/bin/gunicorn -b 0.0.0.0:8000 -w 4  --access-logfile /var/log/wedding/gunicorn-access.log --error-logfile /var/log/wedding/gunicorn-error.log wedding:app
+directory=/home/deploy/app/backend
+user=deploy
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true

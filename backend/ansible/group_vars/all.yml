@@ -1,0 +1,25 @@
+---
+server_user: "deploy"
+server_user_password: "$6$QqnoidMO.yf$rlEUNYSMGGV5cQnKxJ1.xjO.vL0Kc1v9FBoEN5Vx09fPjWkYo0whvA7Wy6lqlnCXMEsmcle3HJ0tlPyg9Tww8/"
+server_user_groups:
+    -   sudo
+db_root_password: "202002WeddingDB"
+db_user: "app"
+db_user_password: "202002WeddingDB"
+db_name: "appDB"
+ansible_python_interpreter: "python3"
+admin_email: "andreas_a@outlook.com"
+domain_name: "bröllop.arnesson.dev"
+puny_domain: "xn--brllop-xxa.arnesson.dev"
+app_root: "/home/deploy/app"
+user_home: "/home/deploy"
+default_user: "admin"
+root_password: "$6$QqnoidMO.yf$rlEUNYSMGGV5cQnKxJ1.xjO.vL0Kc1v9FBoEN5Vx09fPjWkYo0whvA7Wy6lqlnCXMEsmcle3HJ0tlPyg9Tww8/"
+pub_ssh_key_location: 
+    -   "/mnt/c/Users/aar/.ssh/aws.pub"
+apt_packages:
+    -   fail2ban
+    -   unattended-upgrades
+    -   git
+    -   tmux
+SECRET_CREATE_KEY: "secret-AF"
