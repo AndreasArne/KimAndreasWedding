@@ -36,23 +36,35 @@
             alt="Vi">
     </div>
     <color-block-row id="us" heading="Oss">
-        <p>Förhoppningsvis känner ni oss, eller i alla fall en av oss, men här är lite mer info om oss. Alltså vi som gifter oss!</p>
+        <p class="text-center">Förhoppningsvis känner ni oss, eller i alla fall en av oss, men här är lite mer info om oss.
+            Alltså vi som gifter oss!</p>
         <div class="two-part-list">
             <div class="left">
                 <h2 class="text-center">Kim</h2>
-                Massa info
+                <strong>Namn: </strong><span>Kim Minh Margareta Svensson Sand, snart Arnesson</span><br>
+                <strong>Smeknamn: </strong><span>Windrunner</span>
+                <strong>Hemort: </strong><span>Hedemora</span><br>
+                <strong>Gör helst hemma: </strong><span>Sover</span><br>
+                <strong>Favorithundras: </strong><span>Shibadiba inu</span><br>
             </div>
             <div class="right">
                 <h2 class="text-center">Andreas</h2>
-                massa info
+                <strong>Namn: </strong><span>Andreas Viktor Oliver Arnesson</span><br>
+                <strong>Smeknamn: </strong><span>Zeldah, Arne</span>
+                <strong>Hemort: </strong><span>Osby</span><br>
+                <strong>Gör helst hemma: </strong><span>Tittar på youtube, reddit och gamear gamla spel från 90-talet</span><br>
+                <strong>Favorithundras: </strong><span>Boxerpoxer</span><br>
             </div>
         </div>
         <h2 class="text-center">Vi</h2>
-        <p>Andreas ville plugga. Han skulle plugga till ett jobb där han kunde tjäna så mycket pengar som möjligt, men jobba så lite som möjligt.
-            Han valde Software Engineering-utbildningen på BTH, Blekinge tekniska högskola, i Karlskrona.
-            Kim ville bli optiker, men ångrade sig, och ville ha ett jobb där man fick skapa och vara lite kreativ. Gärna inom IT.
-            Hon valde Civilingenjör inom data- och medieteknik. Ja, hon ångrade sig och bytte, även hon till Software Engineering.
-        </p>
+        <div class="flex-center-container">
+            <div>
+                <strong>Namn: </strong><span>Zeldhrunner</span><br>
+                <strong>Hemort: </strong><span>Än så länge Karlskrona</span><br>
+                <strong>Gör helst hemma: </strong><span>Tittar på serier eller spelar tillsammans</span><br>
+                <strong>Favorithundras: </strong><span>Lagotto Romagnolo</span><br>
+            </div>
+        </div>
     </color-block-row>
     <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>
