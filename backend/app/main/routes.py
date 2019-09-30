@@ -20,7 +20,7 @@ def create_party():
     """
     data = request.get_json()
     if data["id"] != os.environ.get('SECRET_CREATE_KEY'):
-        current_app.logger.debug("Wrong identifictation: {}".format(data))
+        current_app.logger.debug("Wrong identifictation: {}, key {}".format(data, os.environ.get('SECRET_CREATE_KEY')))
         return "Wrong identification", 401
         
     result = {

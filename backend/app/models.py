@@ -15,7 +15,7 @@ class Party(UserMixin, db.Model):
     """
     Represents a party invited to the wedding
     """
-    id = db.Column(db.String(6), unique=True)
+    id = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(120), primary_key=True)
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     osa = db.Column(db.Boolean)
@@ -105,7 +105,7 @@ class Guest(db.Model):
     food = db.Column(db.String(140))
     drink = db.Column(db.String(140))
     allergy = db.Column(db.String(255))
-    party_id = db.Column(db.Integer, db.ForeignKey('party.email'), primary_key=True)
+    party_id = db.Column(db.String(10), db.ForeignKey('party.id'), primary_key=True)
 
     def __repr__(self):
         return '<Guest: {}, coming: {} with party {}>'.format(self.name, self.coming, self.party_id)
