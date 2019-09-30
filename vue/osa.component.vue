@@ -99,7 +99,7 @@ export default {
             this.errors = [];
             if (validateParty(this.party)) {
                 this.guestsService.putParty(this.party).then((response) => {
-                    //window.location.href = '../registered?hash=' + this.hash 
+                    window.location.href = '../registered?hash=' + this.hash 
                 }).catch(() => {
                     this.errors.push('Något gick fel. Försök igen eller kontakta Kim och Andreas')
                 });
