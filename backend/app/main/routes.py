@@ -61,8 +61,8 @@ def get_party():
         current_app.logger.debug("POST data: {}".format(data))
         try:
             party = Party.query.filter_by(id=data["id"]).one()
-            if party.osa:
-                return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
+            # if party.osa:
+                # return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
             current_app.logger.debug("Party found {}".format(party.to_dict()))
             respons = party.to_dict(), 200
         except orm.exc.NoResultFound as e:
