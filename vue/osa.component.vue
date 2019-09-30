@@ -73,7 +73,7 @@ export default {
     },
     methods: {
         submitHash: function(hash) {
-            if (hash && hash.length === 4) {
+            if (hash && hash.length === 10) {
                 this.getParty(hash);
                 this.errors = [];
             } else {
