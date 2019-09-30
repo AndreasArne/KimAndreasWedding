@@ -36,14 +36,23 @@
             alt="Vi">
     </div>
     <color-block-row id="us" heading="Oss">
-        <p>Så träffades vi + om oss
-                Vi träffades
-                Vi blev tillsammans
-                Vi flyttande ihop
-                Vi förlovade oss
-                Skriv som en onlineprofil?
-                Vilka är vi, vad gör vi osv.
-                </p>
+        <p>Förhoppningsvis känner ni oss, eller i alla fall en av oss, men här är lite mer info om oss. Alltså vi som gifter oss!</p>
+        <div class="two-part-list">
+            <div class="left">
+                <h2 class="text-center">Kim</h2>
+                Massa info
+            </div>
+            <div class="right">
+                <h2 class="text-center">Andreas</h2>
+                massa info
+            </div>
+        </div>
+        <h2 class="text-center">Vi</h2>
+        <p>Andreas ville plugga. Han skulle plugga till ett jobb där han kunde tjäna så mycket pengar som möjligt, men jobba så lite som möjligt.
+            Han valde Software Engineering-utbildningen på BTH, Blekinge tekniska högskola, i Karlskrona.
+            Kim ville bli optiker, men ångrade sig, och ville ha ett jobb där man fick skapa och vara lite kreativ. Gärna inom IT.
+            Hon valde Civilingenjör inom data- och medieteknik. Ja, hon ångrade sig och bytte, även hon till Software Engineering.
+        </p>
     </color-block-row>
     <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>

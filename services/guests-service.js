@@ -28,6 +28,6 @@ export default class GuestsService {
     }
 
     putParty(party) {
-        return this.makeRequest('PUT', 'http://localhost:8000/update_party', 'json', JSON.stringify({"party":party}))
+        return this.makeRequest('PUT', 'http://localhost:8000/update_party', 'json', JSON.stringify(party))
     }
 }
