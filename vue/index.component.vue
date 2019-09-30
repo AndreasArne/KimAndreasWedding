@@ -6,8 +6,8 @@
                 src="../assets/branchWithNames.png"
                 alt="Kim & Andreas 2020">
     </div>
-    <color-block-row heading="Välkommen till vårt bröllop">
-        <div class="two-part-list">
+    <color-block-row id="invitation" heading="Välkommen till vårt bröllop">
+        <div class="two-part-list content-row">
             <div class="left">
                 <h2>Vigseln</h2>
                 <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta</p>
@@ -18,10 +18,14 @@
                 <h2>Klädkod</h2>
                 <p>Mörk kostym</p>
                 <h2>Boende</h2>
-                <p>Vi har bokat en pool av rum för er som reser långväga. Boka rum här länk</p>
+                <p>Vi har bokat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag.</p>
+                <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
                 <h2>OSA</h2>
-                <p>OSA senast den blabla. OSA kan du göra <a href="./osa">här</a></p>
+                <p>OSA senast den *DATUM HÄR*. OSA eller se din anmälan <a href="./osa">här</a></p>
             </div>
+        </div>
+        <div class="flex-center-container">
+            <img class="kimAndreasGif" src="../assets/kimAndreasLarge.gif">
         </div>
     </color-block-row>
     <div class="flex-center-container image-row">
@@ -29,7 +33,7 @@
             src="../assets/us.png"
             alt="Vi">
     </div>
-    <color-block-row heading="Oss">
+    <color-block-row id="us" heading="Oss">
         <p>Så träffades vi + om oss
                 Vi träffades
                 Vi blev tillsammans
@@ -39,7 +43,7 @@
                 Vilka är vi, vad gör vi osv.
                 </p>
     </color-block-row>
-    <light-row heading="Bröllop i detalj">
+    <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>
         <p>Vigseln kommer att hållas 17.45 på trappan utanför verket.
             Förhoppningen är att vi ska kunna ha vigseln utomhus, så packa med varma ytterkläder!
@@ -84,7 +88,7 @@
             </div>
         </div>
     </color-block-row>
-    <light-row heading="Önskelista">
+    <light-row id="wishlist" heading="Önskelista">
         <div class="flex-center-container">
             <p>Spreadsheet här</p>
             <ul>
@@ -94,10 +98,10 @@
             </ul>
         </div>
     </light-row>
-    <color-block-row heading="Hotellet">
+    <color-block-row id="hotel" heading="Hotellet">
         <p>Här skriver vi en massa om boendet, vart det är, vart man bokas osv</p>
     </color-block-row>
-    <dark-row heading="Kontakta oss">
+    <dark-row id="contact" heading="Kontakta oss">
         <p class="text-center">Om du har några frågor kan du kontakta oss:</p>
         <div class="two-part-list">
             <div class="left text-center">
@@ -132,3 +136,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .kimAndreasGif {
+        width: 256px;
+    }
+</style>

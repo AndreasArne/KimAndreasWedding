@@ -1,10 +1,12 @@
 <template>
     <div class="flex-center-container top-menu dark-row">
         <ul>
-            <li><a href="#">När Var Hur</a></li>
-            <li><a href="#">Gäster</a></li>
-            <li><a href="#">Galleri</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#invitation">Inbjudan</a></li>
+            <li><a href="#us">Oss</a></li>
+            <li><a href="#our-wedding">Vårt bröllop</a></li>
+            <li><a href="#wishlist">Önskelistan</a></li>
+            <li><a href="#hotel">Hotellet</a></li>
+            <li><a href="#contact">Kontakta oss</a></li>
         </ul>
     </div>
 </template>
