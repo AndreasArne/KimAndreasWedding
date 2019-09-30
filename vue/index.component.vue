@@ -7,7 +7,7 @@
                 alt="Kim & Andreas 2020">
     </div>
     <color-block-row id="invitation" heading="Välkommen till vårt bröllop">
-        <div class="two-part-list content-row">
+        <div class="two-part-list">
             <div class="left">
                 <h2>Vigseln</h2>
                 <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta</p>
@@ -18,11 +18,13 @@
                 <h2>Klädkod</h2>
                 <p>Mörk kostym</p>
                 <h2>Boende</h2>
-                <p>Vi har bokat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag.</p>
-                <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
+                <p>Vi har bokat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag till söndag.</p>
                 <h2>OSA</h2>
                 <p>OSA senast den *DATUM HÄR*. OSA eller se din anmälan <a href="./osa">här</a></p>
             </div>
+        </div>
+        <div class="flex-center-container content-row">
+            <p>Mer information om bröllopet finns <a href="#our-wedding">här</a></p>
         </div>
         <div class="flex-center-container">
             <img class="kimAndreasGif" src="../assets/kimAndreasLarge.gif">
@@ -100,6 +102,7 @@
     </light-row>
     <color-block-row id="hotel" heading="Hotellet">
         <p>Här skriver vi en massa om boendet, vart det är, vart man bokas osv</p>
+        <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
     </color-block-row>
     <dark-row id="contact" heading="Kontakta oss">
         <p class="text-center">Om du har några frågor kan du kontakta oss:</p>

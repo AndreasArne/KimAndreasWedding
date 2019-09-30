@@ -24,10 +24,10 @@ export default class GuestsService {
     }
 
     getParty(hash) {
-        return this.makeRequest('POST', 'http://localhost:9000/get_party', 'json', JSON.stringify({"id":hash}))
+        return this.makeRequest('POST', 'http://localhost:8000/get_party', 'json', JSON.stringify({"id":hash}))
     }
 
-    putParty(hash, guests) {
-        return this.makeRequest('PUT', 'http://localhost:9000/update_party', 'json', JSON.stringify({"id":hash, "guests":guests}))
+    putParty(party) {
+        return this.makeRequest('PUT', 'http://localhost:8000/update_party', 'json', JSON.stringify({"party":party}))
     }
 }

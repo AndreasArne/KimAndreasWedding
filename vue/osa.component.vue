@@ -1,7 +1,7 @@
 <template>
     <dark-row>
         <div v-if="!party">
-            <form class="" v-if="!party">
+            <form v-if="!party" novalidate>
                 <h1 class="text-center">{{ texts.osaForm.hash.heading }}</h1>
                 <p class="text-center">{{ texts.osaForm.hash.help }}</p>
                 <p class="text-center error" v-for="error in errors" v-bind:key="error">{{ error }}</p>
@@ -98,8 +98,8 @@ export default {
         register: function() {
             this.errors = [];
             if (validateParty(this.party)) {
-                this.guestsService.putParty(this.hash, this.party).then((response) => {
-                    window.location.href = '../registered?hash=' + this.hash 
+                this.guestsService.putParty(this.party).then((response) => {
+                    //window.location.href = '../registered?hash=' + this.hash 
                 }).catch(() => {
                     this.errors.push('Något gick fel. Försök igen eller kontakta Kim och Andreas')
                 });

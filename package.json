@@ -7,7 +7,7 @@
     "test": "jest",
     "start:dev": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
-    "mock": "mockserver -p 9000 -m ./mocks"
+    "mock": "mockserver -p 8000 -m ./mocks"
   },
   "author": "Kim Svensson Sand, Andreas Arnesson",
   "license": "ISC",
