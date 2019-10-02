@@ -11,6 +11,7 @@
             <div class="left">
                 <h2>Vigseln</h2>
                 <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta</p>
+                <p>Vid dåligt väder är vi inne på Verket.</p>
                 <h2>Festen</h2>
                 <p>Efter vigseln samlas vi inne på verket för att fira! Vi bjuder på mat och dryck.</p>
             </div>
@@ -18,7 +19,8 @@
                 <h2>Klädkod</h2>
                 <p>Mörk kostym</p>
                 <h2>Boende</h2>
-                <p>Vi har bokat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag till söndag.</p>
+                <p>Vi har reserverat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag till söndag.</p>
+                <p>Det finns tre typer av rum: enkelrum 920kr/natt, dubbelrum 1220kr/natt och familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</p>
                 <h2>OSA</h2>
                 <p>OSA senast den *DATUM HÄR*. OSA eller se din anmälan <a href="./osa">här</a></p>
             </div>
@@ -68,7 +70,7 @@
     </color-block-row>
     <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>
-        <p>Vigseln kommer att hållas 17.45 på trappan utanför verket.
+        <p>Vigseln kommer att hållas 16.45 på trappan utanför verket.
             Förhoppningen är att vi ska kunna ha vigseln utomhus, så packa med varma ytterkläder!
             Vigseln kommer att vara en borgerlig vigsel som kommer ta cirka 15 minuter.
             Innan vigseln samlas ni, minglar lite och vi bjuder på varm choklad.
@@ -80,8 +82,10 @@
             Efter middagen firar och festar vi järnet.
         </p>
         <h2 class="text-center">Platsen</h2>
-        <p>Lokalen där vi kommer att hålla till är fantastiska verket i Avesta.
-            Berätta mer om verket osv.
+        <p>Lokalen där vi kommer att hålla till är fantastiska <a href="http://verket.se/">Verket</a> i Avesta.
+            Verket är ett gammalt järnverk från 1870-talet och innan dess var det ett kopparbruk.
+             Idag är det ett inlevelsemuseum som fokuserar på industrihistoria och konst. Festen äger rum i den så kallade Rostugnshallen.
+             I Rostugnshallen rostades järnetmalmen som en del av förberedelserna inför smältning av malmen.
         </p>
         <h2 class="text-center">Sociala medier</h2>
         <p>Ni får jättegärna fota och dela bilder på sociala medier.
