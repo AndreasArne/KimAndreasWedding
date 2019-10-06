@@ -174,8 +174,9 @@
         <GmapPolyline 
             :options="{ strokeColor:'#FF0000'}"
             :strokeOpacity="1.0"
-            :strokeWeight="7"
-            :path="walkingCoordinates"
+            :strokeWeight="10"
+            :path="walking.walkingCoordinates"
+            @click="openInfoWindow(walking)"
         />
     </GmapMap>
 </div>
@@ -196,13 +197,20 @@ export default {
     },
     data: function() {
         return {
-            walkingCoordinates: [
-                {lat: 60.146109, lng: 16.169589},
-                {lat: 60.146929, lng: 16.170166}, 
-                {lat: 60.148220, lng: 16.170821},
-                {lat: 60.148418, lng: 16.169868},
-                {lat: 60.148986, lng: 16.170316}
-            ],
+            walking: {
+                walkingCoordinates: [
+                    {lat: 60.146109, lng: 16.169589},
+                    {lat: 60.146929, lng: 16.170166},
+                    {lat: 60.148220, lng: 16.170821},
+                    {lat: 60.148418, lng: 16.169868},
+                    {lat: 60.148986, lng: 16.170316}
+                ],
+                position: {
+                    lat: 60.146866,
+                    lng: 16.170184
+                },
+                description: "Gångväg mellan hotellet och verket."
+            },
             infoContent: '',
             infoWindowPos: {
                 lat: 0,
