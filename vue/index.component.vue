@@ -146,6 +146,38 @@
             </div>
         </div>
     </dark-row>
+    <GmapMap
+        :center="{lat:60.148155, lng:16.170317}"
+        :zoom="15"
+        map-type-id="satellite"
+        style="width: 100%; height: 300px"
+    >
+        <GmapMarker
+            :key="index"
+            v-for="(m, index) in markers"
+            :position="m.position"
+            :clickable="true"
+            :title="m.title"
+            :label="m.label"
+            @click="openInfoWindow(m)"
+        />
+
+        <GmapInfoWindow
+            :options="infoOptions"
+            :position="infoWindowPos"
+            :opened="infoWinOpen"
+            @closeclick="infoWinOpen=false"
+        >
+        <div v-html="infoContent"></div>
+        </GmapInfoWindow>
+
+        <GmapPolyline 
+            :options="{ strokeColor:'#FF0000'}"
+            :strokeOpacity="1.0"
+            :strokeWeight="7"
+            :path="walkingCoordinates"
+        />
+    </GmapMap>
 </div>
 </template>
 
@@ -161,6 +193,58 @@ export default {
         'colorBlockRow': ColorBlockRow,
         'darkRow': DarkRow,
         'lightRow': LightRow
+    },
+    data: function() {
+        return {
+            walkingCoordinates: [
+                {lat: 60.146109, lng: 16.169589},
+                {lat: 60.146929, lng: 16.170166}, 
+                {lat: 60.148220, lng: 16.170821},
+                {lat: 60.148418, lng: 16.169868},
+                {lat: 60.148986, lng: 16.170316}
+            ],
+            infoContent: '',
+            infoWindowPos: {
+                lat: 0,
+                lng: 0
+           },
+           infoWinOpen: false,
+           currentMidx: null,
+           //optional: offset infowindow so it visually sits nicely on top of our marker
+           infoOptions: {
+               pixelOffset: {
+                   width: 0,
+                   height: -35
+                }
+            },
+            markers: [
+                {
+                    position: {
+                        lat: 60.148948,
+                        lng: 16.170542
+                    },
+                    description: "Verket",
+                    title: "Verket",
+                    label: "A"
+                },
+                {
+                    position: {
+                        lat: 60.145771,
+                        lng: 16.168557
+                    },
+                    description: "Best Western Nya Star Hotel",
+                    title: "Hotel",
+                    label: "B"
+                }
+            ]
+        }
+    },
+    methods: {
+        openInfoWindow(marker) {
+            this.infoContent = marker.description;
+            this.infoWinOpen = true;
+            this.infoWindowPos = marker.position;
+        }
     }
 }
 </script>
