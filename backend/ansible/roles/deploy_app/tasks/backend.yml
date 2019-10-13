@@ -1,0 +1,78 @@
+---
+-   name: Install requirements
+    pip:
+        requirements: "{{ app_root }}/backend/requirements.txt"
+        virtualenv: "{{ app_root }}/backend/venv"
+        virtualenv_command: /usr/bin/python3.5 -m venv
+
+-   name: Set FLASK_APP in .profile
+    lineinfile:
+        path: "{{ user_home }}/.profile"
+        regexp: '^export FLASK_APP'
+        line: "export FLASK_APP={{ app_file }}"
+
+-   name: Ensure app .env exist
+    file:
+        path: "{{ app_root}}/backend/.env"
+        state: touch
+
+-   name: Generate secret key for Flask
+    command: 'python3 -c "import uuid; print(uuid.uuid4().hex)"'
+    register: secret_key
+
+-   name: Set FLask env vars
+    lineinfile:
+        path: "{{ app_root}}/backend/.env"
+        regexp: '{{ item.regexp }}'
+        line: "{{ item.line }}"
+    with_items: "{{ flask_env_vars }}"
+
+# -   name: Init DB
+#     shell: "cd {{ app_root }}/backend && \
+#         . venv/bin/activate && \
+#         flask db init"
+#     ignore_errors: yes
+#     register: db_init_status
+# 
+# # - debug: msg="{{db_init_status}}"
+# 
+# -   name: Migrate DB
+#     shell: "cd {{ app_root }}/backend && \
+#         . venv/bin/activate && \
+#         flask db migrate"
+#     ignore_errors: yes
+#     when: db_init_status
+#     register: db_migrate_status
+# 
+# # -   debug: msg="{{ db_migrate_status }}"
+# 
+# -   name: Stamp head and Migrate DB # https://stackoverflow.com/questions/42992256/how-do-you-add-migrate-an-existing-database-with-alembic-flask-migrate-if-you-di
+#     shell: "cd {{ app_root }}/backend && \
+#         . venv/bin/activate && \
+#         flask db stamp head && flask db migrate"
+#     when: '"Target database is not up to date" in db_migrate_status.stderr'
+#     register: db_migrate_status
+
+-   name: Upgrade DB
+    shell: "cd {{ app_root }}/backend && \
+        . venv/bin/activate && \
+        flask db upgrade"
+
+- name: Create a gunicorn log dir
+  become: yes
+  become_method: sudo
+  file:
+    path: /var/log/wedding
+    state: directory
+    mode: '0755'
+    owner: "{{ server_user }}"
+
+-   name: Copy supervisor.conf
+    become: yes
+    become_method: sudo
+    template:
+        src:  supervisor.conf.j2
+        dest: /etc/supervisor/conf.d/wedding.conf
+        owner: deploy
+        mode: 0755
+    notify: restart supervisor

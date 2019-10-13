@@ -1,0 +1,30 @@
+---
+-   name: Get latest app release
+    uri:
+        url: https://api.github.com/repos/andreasarne/KimAndreasWedding/releases/latest
+        return_content: true
+    register: json_reponse 
+    delegate_to: 127.0.0.1
+
+-   name: ensure app directory exists
+    file:
+        path: "{{ user_home }}/{{ item }}"
+        state: directory
+    with_items:
+        -   tmp
+        -   app
+
+-   name: Unarchive a file that needs to be downloaded
+    unarchive:
+        src: "{{ json_reponse.json.tarball_url }}"
+        dest: "{{ user_home }}/tmp"
+        remote_src: yes
+        mode: "755"
+
+-   name: Move app content from tmp to app folder
+    command: "find {{ user_home }}/tmp -mindepth 2 -maxdepth 2 -type d,f -print -exec mv {} {{ app_root }} ;"
+
+-   name: Remove tmp folder
+    file:
+        path: "{{ user_home }}/tmp"
+        state: absent

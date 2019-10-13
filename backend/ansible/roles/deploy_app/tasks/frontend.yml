@@ -1,0 +1,25 @@
+---
+-   name: Install Nodejs/npm
+    shell: |
+        curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - && sudo apt-get install nodejs
+# 
+# -   name: Install Nodejs/npm
+#     apt:
+#         pkg: nodejs
+#         state: present
+
+-   name: Install npm packages
+    npm:
+        path: "{{app_root}}"
+        # production: yes
+        state: present
+
+-   name: Set google api key
+    lineinfile:
+        dest: "{{app_root}}/app.js"
+        regexp: 'key: "<API-KEY>"'
+        line: 'key: "{{google_api_key}}",'
+        state: present
+
+-   name: Build app
+    shell: "cd {{app_root}} && npm run build"
