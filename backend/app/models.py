@@ -69,7 +69,7 @@ class Party(UserMixin, db.Model):
         for guest_data in data["guests"]:
             try:
                 guest = self.guests.filter_by(name=guest_data["name"]).one()
-                guest.coming = True if guest_data["coming"] in ("True", "true") else False
+                guest.coming = guest_data["coming"]
                 guest.food = guest_data["food"]
                 guest.drink = guest_data["drink"]
                 guest.allergy = guest_data["allergy"]
