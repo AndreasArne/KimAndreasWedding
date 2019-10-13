@@ -10,8 +10,7 @@
         <div class="two-part-list">
             <div class="left">
                 <h2>Vigseln</h2>
-                <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta</p>
-                <p>Vid dåligt väder är vi inne på Verket.</p>
+                <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne i verket.</p>
                 <h2>Festen</h2>
                 <p>Efter vigseln samlas vi inne på verket för att fira! Vi bjuder på mat och dryck.</p>
             </div>
@@ -20,13 +19,13 @@
                 <p>Mörk kostym</p>
                 <h2>Boende</h2>
                 <p>Vi har reserverat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och även vi kommer att sova där från fredag till söndag.</p>
-                <p>Det finns tre typer av rum: enkelrum 920kr/natt, dubbelrum 1220kr/natt och familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</p>
+                <a href="#hotel" class="button-light button">Läs mer och boka</a>
                 <h2>OSA</h2>
-                <p>OSA senast den *DATUM HÄR*. OSA eller se din anmälan <a href="./osa">här</a></p>
+                <p>OSA senast den *DATUM HÄR*. OSA eller se din anmälan: <a class="button-light button" href="./osa">OSA</a></p>
             </div>
         </div>
         <div class="flex-center-container content-row">
-            <p>Mer information om bröllopet finns <a href="#our-wedding">här</a></p>
+            <p>Fler detaljer om bröllopsdagen finns <a class="link" href="#our-wedding">här</a></p>
         </div>
         <div class="flex-center-container">
             <img class="kimAndreasGif" src="../assets/kimAndreasLarge.gif">
@@ -82,7 +81,7 @@
             Efter middagen firar och festar vi järnet.
         </p>
         <h2 class="text-center">Platsen</h2>
-        <p>Lokalen där vi kommer att hålla till är fantastiska <a href="http://verket.se/">Verket</a> i Avesta.
+        <p>Lokalen där vi kommer att hålla till är fantastiska <a class="link" href="http://verket.se/">Verket</a> i Avesta.
             Verket är ett gammalt järnverk från 1870-talet och innan dess var det ett kopparbruk.
              Idag är det ett inlevelsemuseum som fokuserar på industrihistoria och konst. Festen äger rum i den så kallade Rostugnshallen.
              I Rostugnshallen rostades järnetmalmen som en del av förberedelserna inför smältning av malmen.
@@ -127,6 +126,7 @@
     </light-row>
     <color-block-row id="hotel" heading="Hotellet">
         <p>Här skriver vi en massa om boendet, vart det är, vart man bokas osv</p>
+        <p>Det finns tre typer av rum: enkelrum 920kr/natt, dubbelrum 1220kr/natt och familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</p>
         <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
     </color-block-row>
     <dark-row id="contact" heading="Kontakta oss">

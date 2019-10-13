@@ -39,4 +39,7 @@
         color: white;
         font-size: larger;
     }
+    a:hover {
+        color:mistyrose;
+    }
 </style>

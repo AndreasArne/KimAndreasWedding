@@ -1,5 +1,6 @@
 body {
     font-family: 'Nanum Myeongjo', serif;
+    font-size: large;
 }
 
 .image-row {
@@ -42,6 +43,34 @@ body {
 
 .wide-image {
     width: 100%;
+}
+
+a.link {
+    font-weight: bold;
+    color: lightcoral;
+}
+
+a.link:hover {
+    color: firebrick;
+}
+
+a.button {
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.button-light {
+    color: black;
+    background-color: mistyrose;
+}
+
+a.button-light:hover {
+    background-color: lightcoral;
+    color: white;
 }
 
 @media screen and (min-width: 1024px) {
