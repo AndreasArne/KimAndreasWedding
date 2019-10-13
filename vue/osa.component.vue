@@ -82,12 +82,12 @@ export default {
         },
         getParty: function(hash) {
             return this.guestsService.getParty(hash).then((response) => {
-                if (response.guests.some((guest) => guest.coming)) {
-                    this.errors.push('Ni har redan svarat på inbjudan. Undrar ni något eller vill ändra något, hör av er till Kim och Andreas')
-                    return  
+                this.party = response;
+                if (this.party.osa) {
+                    window.location.href = '../registered?hash=' + hash + '&earlier=true'
+                    return 
                 }
 
-                this.party = response;
                 this.guestNames = this.party.guests.map((guest) => { 
                     guest.allergy = ""
                     return guest.name }).join(', ')
@@ -99,7 +99,7 @@ export default {
             this.errors = [];
             if (validateParty(this.party)) {
                 this.guestsService.putParty(this.party).then((response) => {
-                    window.location.href = '../registered?hash=' + this.hash 
+                    window.location.href = '../registered?hash=' + this.hash + '&earlier=false'
                 }).catch(() => {
                     this.errors.push('Något gick fel. Försök igen eller kontakta Kim och Andreas')
                 });

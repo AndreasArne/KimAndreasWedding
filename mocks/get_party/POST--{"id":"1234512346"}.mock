@@ -20,5 +20,6 @@ Access-Control-Allow-Origin: *
         }
     ],
     "id":"1b625ec6d5",
-    "email":"andrkeas@sfdd.com"
+    "email":"andrkeas@sfdd.com",
+    "osa":true
 }

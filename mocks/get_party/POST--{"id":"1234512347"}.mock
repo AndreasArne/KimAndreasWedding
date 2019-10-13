@@ -6,14 +6,14 @@ Access-Control-Allow-Origin: *
     "guests":[
         {
         "name":"Andreas Arnesson",
-        "coming": null,
+        "coming":false,
         "drink":null,
         "food":null,
         "allergy":null
         },
         {
         "name":"Kim Arnesson",
-        "coming":null,
+        "coming":false,
         "drink":null,
         "food":null,
         "allergy":null
@@ -21,5 +21,5 @@ Access-Control-Allow-Origin: *
     ],
     "id":"1b625ec6d5",
     "email":"andrkeas@sfdd.com",
-    "osa":false
+    "osa":true
 }
