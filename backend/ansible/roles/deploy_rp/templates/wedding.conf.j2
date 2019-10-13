@@ -2,15 +2,16 @@ server {
     server_name {{ puny_domain }}
                 www.{{ puny_domain }}
                 ;
+    
     location ~ /.well-known {
-        root <.well-known-path>;
+        root ~/.well-known;
     }
     location / {
         charset utf-8;
-        root    {{ app_root }}/dist;
+        root    {{ app_root }}/build;
         index   index.html index.htm;    # Always serve index.html for any request
         location / {
-            root {{ app_root }}/dist;
+            root {{ app_root }}/build;
             try_files $uri /index.html;
         }
     }
@@ -36,7 +37,11 @@ server {
                 ;
     return 404; # managed by Certbot
 
-
+    location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
+        expires 30d;
+        add_header Vary Accept-Encoding;
+        access_log off;
+    }
 
 
 }
