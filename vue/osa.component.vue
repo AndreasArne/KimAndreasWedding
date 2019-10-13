@@ -1,7 +1,7 @@
 <template>
     <dark-row>
         <div v-if="!party">
-            <form v-if="!party" novalidate>
+            <form v-if="!party" novalidate @submit.prevent="submitHash(hash)">
                 <h1 class="text-center">{{ texts.osaForm.hash.heading }}</h1>
                 <p class="text-center">{{ texts.osaForm.hash.help }}</p>
                 <p class="text-center error" v-for="error in errors" v-bind:key="error">{{ error }}</p>
@@ -11,12 +11,12 @@
                 </div>
             </form>
             <div class="text-center">
-                <button class="button" type="button" v-on:click="submitHash(hash)">Ok</button>
+                <button class="submit" type="button" v-on:click="submitHash(hash)">Ok</button>
                 <button class="button" v-on:click="cancel">Avbryt</button>
             </div>
         </div>
         <div v-if="party">
-            <form class="text-center">
+            <form class="text-center" novalidate @submit.prevent="register">
                 <h1>Hej {{ guestNames }}!</h1>
                 <div v-for="(guest, index) in party.guests" v-bind:key="guest.name" class="text-center guest-form">
                     <h2>{{ guest.name }}</h2>
@@ -42,7 +42,7 @@
             </form>
             <div class="text-center">
                 <p class="error" v-for="error in errors" v-bind:key="error">{{ error }}</p>
-                <button class="button" v-on:click="register">Anmäl</button>
+                <button class="submit" v-on:click="register">Anmäl</button>
                 <button class="button" v-on:click="cancel">Avbryt</button>
             </div>
         </div>
