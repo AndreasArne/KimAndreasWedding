@@ -63,12 +63,12 @@ a.button {
     font-weight: bold;
 }
 
-a.button-light {
+.button-light {
     color: black;
     background-color: mistyrose;
 }
 
-a.button-light:hover {
+.button-light:hover {
     background-color: lightcoral;
     color: white;
 }
