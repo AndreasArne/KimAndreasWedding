@@ -1,12 +1,14 @@
 ---
--   name: Install Nodejs/npm
+-   name: Download nodejs 10.x deb pkg
     shell: |
-        curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - && sudo apt-get install nodejs
-# 
-# -   name: Install Nodejs/npm
-#     apt:
-#         pkg: nodejs
-#         state: present
+        curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+
+-   name: Install Nodejs/npm
+    become: yes
+    become_method: sudo
+    apt:
+        pkg: nodejs
+        state: present
 
 -   name: Install npm packages
     npm:
