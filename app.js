@@ -3,6 +3,7 @@ import Index from './vue/index.component.vue'
 import OSA from './vue/osa.component.vue'
 import Registered from './vue/registered.component.vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
+import './css/app.css'
 
 Vue.use(VueGoogleMaps, {
     load: {

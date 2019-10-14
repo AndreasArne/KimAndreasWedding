@@ -7,7 +7,7 @@ module.exports = {
     resolve: {
         alias: { vue: './node_modules/vue/dist/vue.esm.js'}
     },
-    watch: true,
+    watch: false,
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'app.bundle.js'
@@ -35,10 +35,6 @@ module.exports = {
                     'vue-style-loader',
                     'css-loader'
                 ]
-            },
-            {
-                test: /css\/.*.css$/,
-                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.png|.gif$/,
