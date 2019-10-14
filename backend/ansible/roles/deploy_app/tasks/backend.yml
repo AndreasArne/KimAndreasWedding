@@ -27,32 +27,6 @@
         line: "{{ item.line }}"
     with_items: "{{ flask_env_vars }}"
 
-# -   name: Init DB
-#     shell: "cd {{ app_root }}/backend && \
-#         . venv/bin/activate && \
-#         flask db init"
-#     ignore_errors: yes
-#     register: db_init_status
-# 
-# # - debug: msg="{{db_init_status}}"
-# 
-# -   name: Migrate DB
-#     shell: "cd {{ app_root }}/backend && \
-#         . venv/bin/activate && \
-#         flask db migrate"
-#     ignore_errors: yes
-#     when: db_init_status
-#     register: db_migrate_status
-# 
-# # -   debug: msg="{{ db_migrate_status }}"
-# 
-# -   name: Stamp head and Migrate DB # https://stackoverflow.com/questions/42992256/how-do-you-add-migrate-an-existing-database-with-alembic-flask-migrate-if-you-di
-#     shell: "cd {{ app_root }}/backend && \
-#         . venv/bin/activate && \
-#         flask db stamp head && flask db migrate"
-#     when: '"Target database is not up to date" in db_migrate_status.stderr'
-#     register: db_migrate_status
-
 -   name: Upgrade DB
     shell: "cd {{ app_root }}/backend && \
         . venv/bin/activate && \
