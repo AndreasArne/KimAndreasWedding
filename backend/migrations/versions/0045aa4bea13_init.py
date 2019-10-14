@@ -1,8 +1,8 @@
-"""Creates tables with FK string of size 10
+"""Init
 
-Revision ID: 3f78e1f064f6
+Revision ID: 0045aa4bea13
 Revises: 
-Create Date: 2019-09-28 12:04:11.501431
+Create Date: 2019-10-14 20:04:51.727149
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3f78e1f064f6'
+revision = '0045aa4bea13'
 down_revision = None
 branch_labels = None
 depends_on = None

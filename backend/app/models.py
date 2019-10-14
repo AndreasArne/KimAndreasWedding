@@ -105,7 +105,7 @@ class Guest(db.Model):
     food = db.Column(db.String(140))
     drink = db.Column(db.String(140))
     allergy = db.Column(db.String(255))
-    party_id = db.Column(db.String(10), db.ForeignKey('party.id'), primary_key=True)
+    party_id = db.Column(db.String(10), db.ForeignKey(Party.id), primary_key=True)
 
     def __repr__(self):
         return '<Guest: {}, coming: {} with party {}>'.format(self.name, self.coming, self.party_id)
