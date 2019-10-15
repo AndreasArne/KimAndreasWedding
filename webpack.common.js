@@ -7,13 +7,9 @@ module.exports = {
     resolve: {
         alias: { vue: './node_modules/vue/dist/vue.esm.js'}
     },
-    watch: false,
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js'
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'build')
     },
     module: {
         rules: [

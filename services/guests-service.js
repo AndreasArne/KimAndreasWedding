@@ -1,4 +1,8 @@
 export default class GuestsService {
+    constructor() {
+        this.apiUrl = API_URL || 'https://bröllop.arnesson.dev/api';
+    }
+
     makeRequest(method, url, responseType, data) {
         const request = new XMLHttpRequest();
 
@@ -24,10 +28,10 @@ export default class GuestsService {
     }
 
     getParty(hash) {
-        return this.makeRequest('POST', 'https://bröllop.arnesson.dev/api/get_party', 'json', JSON.stringify({"id":hash}))
+        return this.makeRequest('POST', `${this.apiUrl}/get_party`, 'json', JSON.stringify({"id":hash}))
     }
 
     putParty(party) {
-        return this.makeRequest('PUT', 'https://bröllop.arnesson.dev/api/update_party', 'json', JSON.stringify(party))
+        return this.makeRequest('PUT', `${this.apiUrl}/update_party`, 'json', JSON.stringify(party))
     }
 }
