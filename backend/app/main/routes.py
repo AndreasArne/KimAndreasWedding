@@ -63,7 +63,7 @@ def get_party():
             party = Party.query.filter_by(id=data["id"]).one()
             # if party.osa:
                 # return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
-            current_app.logger.debug("Party found {}".format(party.to_dict()))
+            current_app.logger.info("Party found {}".format(party.to_dict()))
             respons = party.to_dict(), 200
         except orm.exc.NoResultFound as e:
             respons = ("Hittar inte id {}. {}".format(
@@ -92,7 +92,7 @@ def update_party():
             party = Party.query.filter_by(id=data["id"]).one()
             if party.osa:
                 return ("Ni har redan anmält er. {} om ni har några frågor.".format(CONTACT_MSG), 403)
-            current_app.logger.debug("Party found {}".format(party.to_dict()))
+            current_app.logger.info("Party found {}".format(party.to_dict()))
             party.update_party(data)
             db.session.commit()
             respons = party.to_dict(), 200

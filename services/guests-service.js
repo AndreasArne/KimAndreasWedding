@@ -24,10 +24,10 @@ export default class GuestsService {
     }
 
     getParty(hash) {
-        return this.makeRequest('POST', 'http://localhost:8000/get_party', 'json', JSON.stringify({"id":hash}))
+        return this.makeRequest('POST', 'https://bröllop.arnesson.dev/api/get_party', 'json', JSON.stringify({"id":hash}))
     }
 
     putParty(party) {
-        return this.makeRequest('PUT', 'http://localhost:8000/update_party', 'json', JSON.stringify(party))
+        return this.makeRequest('PUT', 'https://bröllop.arnesson.dev/api/update_party', 'json', JSON.stringify(party))
     }
 }
