@@ -103,7 +103,7 @@ class Guest(db.Model):
     name = db.Column(db.String(140), primary_key=True)
     coming = db.Column(db.Boolean, nullable=True)
     food = db.Column(db.String(140))
-    drink = db.Column(db.String(140))
+    drink = db.Column(db.Boolean)
     allergy = db.Column(db.String(255))
     party_id = db.Column(db.String(10), db.ForeignKey(Party.id), primary_key=True)
 
