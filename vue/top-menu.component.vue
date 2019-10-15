@@ -38,6 +38,7 @@
     a {
         color: white;
         font-size: larger;
+        font-family: 'Charmonman', cursive;
     }
     a:hover {
         color:mistyrose;

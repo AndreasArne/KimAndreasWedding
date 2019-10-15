@@ -33,7 +33,7 @@
     </color-block-row>
     <div class="flex-center-container image-row">
         <img class="wide-image"
-            src="../assets/us.png"
+            src="../assets/kimAndreasImage.png"
             alt="Vi">
     </div>
     <color-block-row id="us" heading="Oss">
@@ -149,6 +149,7 @@
     <GmapMap
         :center="{lat:60.148155, lng:16.170317}"
         :zoom="15"
+        map-type-id="satellite"
         style="width: 100%; height: 300px"
     >
         <GmapMarker
