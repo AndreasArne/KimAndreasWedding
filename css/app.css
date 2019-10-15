@@ -1,6 +1,5 @@
 body {
     font-family: 'EB Garamond', serif;
-    font-size: large;
 }
 
 h1, h2, h3, h4 {
@@ -48,6 +47,10 @@ h1, h2, h3, h4 {
 
 .wide-image {
     width: 100%;
+}
+
+.icon {
+    width: 128px;
 }
 
 a.link {
