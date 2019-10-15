@@ -13,7 +13,7 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     devServer: {
-        historyApiFallback: true
+        contentBase: path.join(__dirname, 'build')
     },
     module: {
         rules: [
