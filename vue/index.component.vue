@@ -66,13 +66,13 @@
                 <strong>Namn: </strong><span>Andreas Arnesson</span><br>
                 <strong>Smeknamn: </strong><span>Zeldah</span><br>
                 <strong>Hemort: </strong><span>Osby</span><br>
-                <strong>Hobbys: </strong><span></span><br>
-                <strong>Gör helst hemma: </strong><span>Spelar gamla spel från 90-talet.</span><br>
+                <strong>Hobbys: </strong><span>Spela, klättra, mountain bike, fantasy böcker, filmer, tv-serier, hemautomation och programmering.</span><br>
+                <strong>Gör helst hemma: </strong><span>Sitter i soffan.</span><br>
                 <strong>Favorithundras: </strong><span>Boxerpoxer</span><br>
-                <strong>Favoritspel: </strong><span></span><br>
-                <strong>Snacks: </strong><span></span><br>
-                <strong>Bästa surölen: </strong><span></span><br>
-                <strong>Planen om zombieapocalypsen kommer: </strong><span></span><br>
+                <strong>Favoritspel: </strong><span>Diablo 2</span><br>
+                <strong>Snacks: </strong><span>Allt som innehåller minst 2/3 socker.</span><br>
+                <strong>Bästa surölen: </strong><span>Pear Bear</span><br>
+                <strong>Planen om zombieapocalypsen kommer: </strong><span>Lägger mig i fosterställning, gråter och väntar på ryssen.</span><br>
             </div>
         </div>
         <h2 class="text-center">Vi</h2>
@@ -123,8 +123,13 @@
         </div>
     </light-row>
     <color-block-row id="hotel" heading="Hotellet">
-        <p>Här skriver vi en massa om boendet, vart det är, vart man bokas osv</p>
-        <p>Det finns tre typer av rum: enkelrum 920kr/natt, dubbelrum 1220kr/natt och familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</p>
+        <p>Best Western nya start hotel i Avesta ligger på 2:a våningen av Avesta Galleria. Det är ~10 min gång mellan hotellet och Verket och är markerat på kartan nedanför. Det går att parkera på parkerings som tillhör gallerian. Det går även att boka parkering i garage mot tilläg.</p>
+        <p>Vi har reserverat tre typer av rum och det ingår frukost i priset:</p>
+        <ul>
+            <li>Enkelrum 920kr/natt</li>
+            <li>Dubbelrum 1220kr/natt</li>
+            <li>Familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</li>
+        </ul>
         <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
         <div class="flex-center-container">
             <img class="pixel-image-large" src="../assets/sleepingLarge.gif">
