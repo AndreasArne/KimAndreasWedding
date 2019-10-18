@@ -224,6 +224,8 @@ export default {
         return {
             walking: {
                 walkingCoordinates: [
+                    {lat: 60.145447, lng: 16.168064},
+                    {lat: 60.145308, lng: 16.168939},
                     {lat: 60.146109, lng: 16.169589},
                     {lat: 60.146929, lng: 16.170166},
                     {lat: 60.148220, lng: 16.170821},
@@ -262,8 +264,8 @@ export default {
                 },
                 {
                     position: {
-                        lat: 60.145771,
-                        lng: 16.168557
+                        lat: 60.145607,
+                        lng: 16.168311
                     },
                     description: "Best Western Nya Star Hotel",
                     title: "Hotel",
