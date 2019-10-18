@@ -111,7 +111,7 @@
         <p>Lokalen där vi kommer att hålla till är fantastiska <a class="link" href="http://verket.se/">Verket</a> i Avesta.
             Verket är ett gammalt järnverk från 1870-talet och innan dess var det ett kopparbruk.
              Idag är det ett inlevelsemuseum som fokuserar på industrihistoria och konst. Festen äger rum i den så kallade Rostugnshallen.
-             I Rostugnshallen rostades järnetmalmen som en del av förberedelserna inför smältning av malmen.
+             I Rostugnshallen rostades järnmalmen som en del av förberedelserna inför smältning av malmen.
         </p>
         <h2 class="text-center">Sociala medier</h2>
         <p>Ni får jättegärna fota och dela bilder på sociala medier.
