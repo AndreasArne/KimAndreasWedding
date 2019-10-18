@@ -177,6 +177,11 @@
                 <li>...</li>
             </ul>
         </div>
+        <div class="flex-center-container">
+            <img class="icon"
+            src="../assets/wishlist.png"
+            alt="">
+        </div>
     </light-row>
     <dark-row id="contact" heading="Kontakta oss">
         <p class="text-center">Om du har några frågor kan du kontakta oss:</p>
