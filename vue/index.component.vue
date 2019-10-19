@@ -8,13 +8,13 @@
     </div>
     <color-block-row id="invitation" heading="Välkommen till vårt bröllop">
         <div class="two-part-list">
-            <div class="left">
+            <div>
                 <h2>Vigseln</h2>
                 <p>Vigseln äger rum 16.30 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne på verket.</p>
                 <h2>Festen</h2>
                 <p>Efter vigseln samlas vi inne på verket för att fira! Vi bjuder på mat och dryck. Om så önskas är det okej att ta med egen dryck.</p>
             </div>
-            <div class="right">
+            <div>
                 <h2>Klädkod</h2>
                 <p>Mörk kostym</p>
                 <h2>Boende</h2>
@@ -24,7 +24,7 @@
                 <p>OSA senast 1 december 2019. <a class="button-light button" href="./osa">Svara på inbjudan eller se anmälan</a></p>
             </div>
         </div>
-        <div class="flex-center-container content-row">
+        <div class="text-center content-row">
             <p>Fler detaljer om bröllopsdagen finns <a class="link" href="#our-wedding">här</a></p>
         </div>
         <div class="flex-center-container">
@@ -49,7 +49,7 @@
             Vi båda arbetar, sparar pengar, betalar försäkringar, planerar bröllop, har fortfarande kul med våra vänner, nära och kära och ser fram emot att se vad framtiden har att erbjuda oss som gift par! (Statusuppdatering på facebook incoming.)
         </p>
         <div class="two-part-list">
-            <div class="left">
+            <div>
                 <h2 class="text-center">Kim</h2>
                 <strong>Namn: </strong><span>Kim Minh Margareta Svensson Sand, snart Arnesson</span><br>
                 <strong>Smeknamn: </strong><span>Windrunner</span><br>
@@ -62,7 +62,7 @@
                 <strong>Bästa surölen: </strong><span>Bräkeriets purple rain</span><br>
                 <strong>Planen om zombieapocalypsen kommer: </strong><span>Fånga kaniner, odla potatis och rabarber. Starta ett handelsimperium på en båt.</span><br>
             </div>
-            <div class="right">
+            <div>
                 <h2 class="text-center">Andreas</h2>
                 <strong>Namn: </strong><span>Andreas Arnesson</span><br>
                 <strong>Smeknamn: </strong><span>Zeldah</span><br>
@@ -77,7 +77,7 @@
             </div>
         </div>
         <h2 class="text-center">Vi</h2>
-        <div class="flex-center-container">
+        <div class="two-part-list">
             <div>
                 <strong>Namn: </strong><span>Kimdreas Svarnesson Arnd</span><br>
                 <strong>Smeknamn: </strong><span>Zeldhrunner</span><br>
@@ -151,6 +151,7 @@
     </color-block-row>
         <GmapMap
         :center="{lat:60.148155, lng:16.170317}"
+        id="map"
         :zoom="15"
         map-type-id="satellite"
         style="width: 100%; height: 300px"

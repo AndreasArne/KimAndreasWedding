@@ -16,7 +16,7 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .content-row {
@@ -40,10 +40,9 @@ h1, h2, h3, h4 {
 
 .two-part-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "left right";
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-column-gap: 50px;
+    justify-items: center;
 }
 
 .wide-image {
@@ -88,7 +87,7 @@ a.button {
         width: 50%;
     }
 }
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
     img {
         width: 100%;
     }

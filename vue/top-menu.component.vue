@@ -1,11 +1,12 @@
 <template>
-    <div class="flex-center-container top-menu dark-row">
-        <ul>
+    <div class="top-menu dark-row">
+        <ul class="flex-center-container">
             <li><a href="#invitation">Inbjudan</a></li>
             <li><a href="#us">Oss</a></li>
             <li><a href="#our-wedding">Vårt bröllop</a></li>
-            <li><a href="#wishlist">Önskelistan</a></li>
             <li><a href="#hotel">Hotellet</a></li>
+            <li><a href="#map">Karta</a></li>
+            <li><a href="#wishlist">Önskelistan</a></li>
             <li><a href="#contact">Kontakta oss</a></li>
         </ul>
     </div>
@@ -42,5 +43,12 @@
     }
     a:hover {
         color:mistyrose;
+    }
+
+    @media screen and (max-device-width: 800px) {
+        .flex-center-container {
+            flex-direction: column;
+            font-size: xx-large;
+        }
     }
 </style>
