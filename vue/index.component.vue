@@ -10,7 +10,7 @@
         <div class="two-part-list">
             <div class="left">
                 <h2>Vigseln</h2>
-                <p>Vigseln äger rum 16.45 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne på verket.</p>
+                <p>Vigseln äger rum 16.30 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne på verket.</p>
                 <h2>Festen</h2>
                 <p>Efter vigseln samlas vi inne på verket för att fira! Vi bjuder på mat och dryck. Om så önskas är det okej att ta med egen dryck.</p>
             </div>
@@ -41,7 +41,8 @@
         <p>Vissa av er kanske har hört historien om oss. Vi träffades under nollningen (insparken för nya studenter som ännu inte har några högskolepoäng).
             Andreas var phadder (någon som skulle ta hand om de nya så kallade nollorna) och Kim var nolla (student utan högskolepoäng).
             Vi spenderade tid med Enheten (en grupp kompisar som studerade på skolan, men som inte är en förening), och hängde på Kåren (Blekinge studentkårs pub).
-            Under flera år utbildade vi oss och hade roligt med våra vänner samtidigt. Ingen tentor icke godkända och inga projekt missade (skryt).
+            Under flera år utbildade vi oss och hade roligt med våra vänner samtidigt. Ingen tentor icke godkända och inga projekt missade för Kim (skryt)
+            och endast en tenta och ett projekt inte godkänt, men sedan klarade, för Andreas (nästan skryt).
             Kim gick med i Familjen (inte knarkligan från Borlänge, utan en studentförening som äter ärtsoppa och dricker punsch på torsdagar).
         </p>
         <p>Nu är vi ansvarsfulla vuxna (vad nu det betyder), vårt förhållande har 6 år på nacken och vi har hunnit glömma vilken dag vi blev tillsammans (plötsligt förstår vi varför folk graverar sina ringar!).
@@ -81,13 +82,13 @@
                 <strong>Namn: </strong><span>Kimdreas Svarnesson Arnd</span><br>
                 <strong>Smeknamn: </strong><span>Zeldhrunner</span><br>
                 <strong>Hemort: </strong><span>Än så länge Karlskrona</span><br>
-                <strong>Hobbys: </strong><span></span><br>
+                <strong>Hobbys: </strong><span>Spela, serier och filmer, äta mat, laga mat och god dryck</span><br>
                 <strong>Gör helst hemma: </strong><span>Äter god mat och tittar på någon bra film eller serie</span><br>
                 <strong>Favorithundras: </strong><span>Lagotto Romagnolo</span><br>
-                <strong>Favoritspel: </strong><span></span><br>
-                <strong>Snacks: </strong><span></span><br>
-                <strong>Bästa surölen: </strong><span></span><br>
-                <strong>Planen om zombieapocalypsen kommer: </strong><span></span><br>
+                <strong>Favoritspel: </strong><span>Killingfloor 2</span><br>
+                <strong>Snacks: </strong><span>En varsin chipspåse, för annars äter Andreas upp chipsen mycket snabbare än Kim</span><br>
+                <strong>Bästa surölen: </strong><span>Mango mango mango</span><br>
+                <strong>Planen om zombieapocalypsen kommer: </strong><span>Vi kom inte på något, så vi hann nog bli zombies.</span><br>
             </div>
         </div>
         <div class="flex-center-container">
@@ -96,16 +97,28 @@
     </color-block-row>
     <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>
-        <p>Vigseln kommer att hållas 16.45 på trappan utanför verket.
+        <p>Klockan 16.30 samlas ni nedanför trappan utanför verket och vi bjuder på varm choklad.
+            Vigselceremonin börjar 16.45, och kommer att äga rum cirka 15 minuter.
             Förhoppningen är att vi ska kunna ha vigseln utomhus, så packa med varma ytterkläder!
-            Vigseln kommer att vara en borgerlig vigsel som kommer ta cirka 15 minuter.
-            Innan vigseln samlas ni, minglar lite och vi bjuder på varm choklad.
+            Om vädret inte tillåter en vigselceremoni utomhus, så kommer ceremonin istället att vara inne på verket.
         </p>
         <h2 class="text-center">Festen</h2>
-        <p>Efter vigseln samlas vi alla och minglar inne på verket, för att sedan fortsätta till middagen.
+        <p>Efter vigseln samlas vi alla och minglar inne på verket, vi bjuder på bubbel och sen är det dags för middag.
             Det serveras tre rätter där ni får välja kött, fisk eller vegetariskt. Ni får även välja om ni vill ha alkohol eller ej.
             Medtag av egen alkohol är okej om man vill!
             Efter middagen firar och festar vi järnet.
+        </p>
+        <h2 class="text-center">Klädkoden</h2>
+        <p>Vi har valt klädkoden mörk kostym. Det innebär en kostym i mörkare färg, till exempel svart, grått eller blått,
+            klänning, kjol eller byxdress i finare material. Traditionsenligt så gäller det att undvika svart klänning, supermycket urringning och superkort kjol.
+            Hellång klänning är helt okej!
+            Klädkoden är en riktlinje, och vi tror att ert sunda förnuft funkar när det kommer till plagg någonstans i klädkodens gråzoner.
+            Är ni osäkra är det bara att fråga oss!
+        </p>
+        <h2 class="text-center">Spex, sång och lek</h2>
+        <p>Om ni har något kul spex, någon sång ni vill framföra eller någon rolig lek, så får ni gärna göra det!
+            Det är bara att höra av oss till någon av våra toastmasters. Vilka toastmasters är kommer att annonseras senare.
+            Spänningen är olidlig. Vi vet!
         </p>
         <h2 class="text-center">Platsen</h2>
         <p>Lokalen där vi kommer att hålla till är fantastiska <a class="link" href="http://verket.se/">Verket</a> i Avesta.
@@ -115,7 +128,7 @@
         </p>
         <h2 class="text-center">Sociala medier</h2>
         <p>Ni får jättegärna fota och dela bilder på sociala medier.
-            Tagga gärna oss i bilderna, och om ni lägger ut bilderna på instagram kan ni använda får hashtag: #kimandreasawesomeness2020
+            Tagga gärna oss i bilderna, och om ni lägger ut bilderna på kan ni använda vår hashtag: #kimandreas2020
         </p>
         <div class="flex-center-container">
             <img class="icon" src="../assets/drink.png">
@@ -123,12 +136,13 @@
         </div>
     </light-row>
     <color-block-row id="hotel" heading="Hotellet">
-        <p>Best Western nya start hotel i Avesta ligger på 2:a våningen av Avesta Galleria. Det är ~10 min gång mellan hotellet och Verket och är markerat på kartan nedanför. Det går att parkera på parkerings som tillhör gallerian. Det går även att boka parkering i garage mot tilläg.</p>
+        <p>Best Western nya start hotel i Avesta ligger på 2:a våningen av Avesta Galleria. Det är ~10 min gång mellan hotellet och Verket och vägen är markerad på kartan nedanför.
+            Det går att parkera på parkeringplatsen som tillhör gallerian Plushuset. Det går även att boka parkering i garage mot tillägg.</p>
         <p>Vi har reserverat tre typer av rum och det ingår frukost i priset:</p>
         <ul>
             <li>Enkelrum 920kr/natt</li>
             <li>Dubbelrum 1220kr/natt</li>
-            <li>Familjerum 1520kr/natt. Skriva något om familjerummen är för familjer?</li>
+            <li>Familjerum 1520kr/natt. Rum för föräldrar och barn</li>
         </ul>
         <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
         <div class="flex-center-container">
@@ -188,14 +202,14 @@
         <div class="two-part-list">
             <div class="left text-center">
                 <p>Kim Svensson Sand<br>
-                    Tel: Telefonnummer här<br>
-                    Email: Email här
+                    Tel: 073-277 05 71<br>
+                    Email: kim.svensson.sand@gmail.com
                 </p>
             </div>
             <div class="right text-center">
                 <p>Andreas Arnesson<br>
-                    Tel: Telefonnummer här <br>
-                    Email: Email här
+                    Tel: 076-837 79 65<br>
+                    Email: andreas_a@outlook.com
                 </p>
             </div>
         </div>
