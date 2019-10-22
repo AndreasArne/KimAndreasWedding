@@ -185,12 +185,7 @@
     </GmapMap>
     <light-row id="wishlist" heading="Önskelista">
         <div class="flex-center-container">
-            <p>Spreadsheet här</p>
-            <ul>
-                <li>Sponsra gärna vår bröllopsresa</li>
-                <li>Kolla på cervera</li>
-                <li>...</li>
-            </ul>
+            <p>Sponsra gärna vår bröllopsresa eller köp något från vår <a class="link" href="https://docs.google.com/spreadsheets/d/1faI4zDVE30mfWfNItiSrfpnoxozuoMJ9Tz7Ymz5IKHE/edit?usp=sharing" target="_blank">önskelista</a>.</p>
         </div>
         <div class="flex-center-container">
             <img class="icon"
