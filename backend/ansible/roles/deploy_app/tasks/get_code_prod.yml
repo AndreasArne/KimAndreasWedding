@@ -6,6 +6,11 @@
     register: json_reponse 
     delegate_to: 127.0.0.1
 
+-   name: Make sure app is not there
+    file:
+        path: "{{ user_home }}/app"
+        state: absent
+
 -   name: ensure app directory exists
     file:
         path: "{{ user_home }}/{{ item }}"
