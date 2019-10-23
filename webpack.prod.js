@@ -7,7 +7,7 @@ module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new webpack.DefinePlugin({
-            API_URL: JSON.stringify("https://bröllop.arnesson.dev/api")
+            API_URL: JSON.stringify("https://brollop.arnesson.dev/api")
         })
     ]
 })
