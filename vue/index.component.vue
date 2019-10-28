@@ -136,15 +136,15 @@
         </div>
     </light-row>
     <color-block-row id="hotel" heading="Hotellet">
-        <p>Best Western nya start hotel i Avesta ligger på 2:a våningen av Avesta Galleria. Det är ~10 min gång mellan hotellet och Verket och vägen är markerad på kartan nedanför.
-            Det går att parkera på parkeringplatsen som tillhör gallerian Plushuset. Det går även att boka parkering i garage mot tillägg.</p>
+        <p>Best Western nya start hotel i Avesta ligger på 2:a våningen av Avesta Galleria. Det är cirka 10 min gång mellan hotellet och Verket och vägen är markerad på kartan nedanför.
+            Det går att parkera på parkeringplatsen som tillhör gallerian. Det går även att boka parkering i garage mot tillägg.</p>
         <p>Vi har reserverat tre typer av rum och det ingår frukost i priset:</p>
         <ul>
             <li>Enkelrum 920kr/natt</li>
             <li>Dubbelrum 1220kr/natt</li>
             <li>Familjerum 1520kr/natt. Rum för föräldrar och barn</li>
         </ul>
-        <p>Boka rum med koden på er inbjudan på deras hemsida <a href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
+        <p>Boka rum med koden på er inbjudan på deras hemsida <a class="link" href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
         <div class="flex-center-container">
             <img class="pixel-image-large" src="../assets/sleepingLarge.gif">
         </div>
