@@ -73,9 +73,9 @@ export default {
     },
     methods: {
         submitHash: function(hash) {
+            this.errors = [];
             if (hash && hash.length === 10) {
                 this.getParty(hash);
-                this.errors = [];
             } else {
                 this.errors.push('Koden är inte korrekt')
             }
