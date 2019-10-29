@@ -153,7 +153,7 @@
         :center="{lat:60.148155, lng:16.170317}"
         id="map"
         :zoom="15"
-        map-type-id="satellite"
+        map-type-id="roadmap"
         style="width: 100%; height: 300px"
     >
         <GmapMarker
