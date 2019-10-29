@@ -1,0 +1,23 @@
+---
+-   name: Install npm packages
+    npm:
+        path: "{{app_root}}"
+        # production: yes
+        state: present
+
+-   name: Set google api key
+    lineinfile:
+        dest: "{{app_root}}/app.js"
+        regexp: 'key: "<API-KEY>"'
+        line: 'key: "{{google_api_key}}",'
+        state: present
+
+-   name: Build app
+    shell: "cd {{app_root}} && npm run build"
+
+-   name: restart nginx
+    become: yes
+    become_method: sudo
+    service:
+        name: nginx
+        state: restarted

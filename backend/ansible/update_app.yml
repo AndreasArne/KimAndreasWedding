@@ -1,0 +1,7 @@
+---
+    -   hosts: wedding
+        remote_user: "{{ server_user }}"
+        vars_files:
+            -    aws_keys.yml
+        roles:
+            -   update_app

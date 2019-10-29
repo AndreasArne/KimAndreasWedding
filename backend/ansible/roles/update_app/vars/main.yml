@@ -1,0 +1,17 @@
+apt_packages:
+    -   python3.5
+    -   python3-venv
+    -   python3-dev
+    -   supervisor
+    -   git
+    -   python-certbot-nginx
+
+app_file: wedding.py
+
+flask_env_vars:
+    -   regexp: "^SECRET_KEY"
+        line: "SECRET_KEY={{ secret_key.stdout }}"
+    -   regexp: "^SECRET_CREATE_KEY"
+        line: "SECRET_CREATE_KEY={{ SECRET_CREATE_KEY }}"
+    -   regexp: "^DATABASE_URL"
+        line: "DATABASE_URL=mysql+pymysql://{{ db_user }}:{{ db_user_password }}@localhost:3306/{{ db_name }}"

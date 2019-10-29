@@ -1,0 +1,14 @@
+---
+-   name: Include Get code prod
+    include_tasks: get_code_prod.yml
+    when: not production is defined or production|bool
+
+-   name: Include Get code dev
+    include_tasks: get_code_dev.yml
+    when: production is defined and not production|bool
+
+-   name: Include Backend
+    include_tasks: backend.yml
+
+-   name: Include Frontend
+    include_tasks: frontend.yml
