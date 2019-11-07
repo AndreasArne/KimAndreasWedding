@@ -10,7 +10,7 @@
         <div class="two-part-list">
             <div>
                 <h2>Vigseln</h2>
-                <p>Vigseln äger rum 16.30 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne på verket.</p>
+                <p>Vigseln äger rum den 15:e februari klockan 16.30 på trappan utanför Verket i Avesta. Vid dåligt väder kommer vigseln att äga rum inne på verket.</p>
                 <h2>Festen</h2>
                 <p>Efter vigseln samlas vi inne på verket för att fira! Vi bjuder på mat och dryck. Om så önskas är det okej att ta med egen dryck.</p>
             </div>
@@ -97,7 +97,7 @@
     </color-block-row>
     <light-row id="our-wedding" heading="Bröllop i detalj">
         <h2 class="text-center">Vigseln</h2>
-        <p>Klockan 16.30 samlas ni nedanför trappan utanför verket och vi bjuder på varm choklad.
+        <p>Den 15:e februari klockan 16.30 samlas ni nedanför trappan utanför verket och vi bjuder på varm choklad.
             Vigselceremonin börjar 16.45, och kommer att äga rum cirka 15 minuter.
             Förhoppningen är att vi ska kunna ha vigseln utomhus, så packa med varma ytterkläder!
             Om vädret inte tillåter en vigselceremoni utomhus, så kommer ceremonin istället att vara inne på verket.
