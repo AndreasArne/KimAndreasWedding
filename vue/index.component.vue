@@ -115,10 +115,13 @@
             Klädkoden är en riktlinje, och vi tror att ert sunda förnuft funkar när det kommer till plagg någonstans i klädkodens gråzoner.
             Är ni osäkra är det bara att fråga oss!
         </p>
-        <h2 class="text-center">Spex, sång och lek</h2>
-        <p>Om ni har något kul spex, någon sång ni vill framföra eller någon rolig lek, så får ni gärna göra det!
-            Det är bara att höra av oss till någon av våra toastmasters. Vilka toastmasters är kommer att annonseras senare.
+        <h2 class="text-center">Spex, sång, lek och tal</h2>
+        <p>Om ni har något kul spex, någon sång eller tal ni vill framföra eller någon rolig lek, så får ni gärna göra det!
+            Det är bara att höra av sig till någon av våra toastmasters. Vilka toastmasters är kommer att annonseras senare.
             Spänningen är olidlig. Vi vet!
+        </p>
+        <p>
+            Det går redan nu att anmäla spex och tal till Moa Berglund på nummret 076-166 27 12.
         </p>
         <h2 class="text-center">Platsen</h2>
         <p>Lokalen där vi kommer att hålla till är fantastiska <a class="link" href="http://verket.se/">Verket</a> i Avesta.
