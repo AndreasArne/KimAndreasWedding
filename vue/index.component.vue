@@ -147,7 +147,7 @@
             <li>Dubbelrum 1220kr/natt</li>
             <li>Familjerum 1520kr/natt. Rum för föräldrar och barn</li>
         </ul>
-        <p>Boka rum med koden på er inbjudan på deras hemsida <a class="link" href="https://www.nyastarhotel.com/">här</a> eller på telefon: 0226-56000</p>
+        <p>Boka rum med koden på er inbjudan på telefon: 0226-56000 eller mejl: info@nyastarhotel.com. PS! innan stod det att ni kunde anmäla er via deras webbsida, men det går inte att använda koden på <a class="link" href="https://www.nyastarhotel.com/">webbsidan</a>.</p>
         <div class="flex-center-container">
             <img class="pixel-image-large" src="../assets/sleepingLarge.gif">
         </div>
