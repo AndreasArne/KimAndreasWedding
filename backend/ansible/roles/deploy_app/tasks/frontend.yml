@@ -1,4 +1,11 @@
 ---
+-   name: Remove old version Nodejs/npm
+    become: yes
+    become_method: sudo
+    apt:
+        pkg: nodejs
+        state: absent
+
 -   name: Download nodejs 10.x deb pkg
     shell: |
         curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -

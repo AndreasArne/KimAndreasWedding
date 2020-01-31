@@ -43,15 +43,6 @@
     notify:
         - restart ssh
 
--   name: Disallow root SSH access
-    lineinfile: 
-        dest: /etc/ssh/sshd_config
-        regexp: "^PermitRootLogin"
-        line: "PermitRootLogin no"
-        state: present
-    notify: 
-        - restart ssh
-
 -   meta: flush_handlers
 
 -   name: Add deploy user to sudoers
@@ -68,11 +59,20 @@
         line: "AllowUsers {{ server_user }}"
     ignore_errors: yes
 
--   name: Remove admin user
-    remote_user: "{{ server_user }}"
-    user:
-        name: "{{ default_user }}"
-        state: absent
-        force: yes
-        remove: yes
-    ignore_errors: yes
+# -   name: Remove default user
+#     remote_user: "{{ server_user }}"
+#     user:
+#         name: "{{ default_user }}"
+#         state: absent
+#         force: yes
+#         remove: yes
+#     ignore_errors: yes
+
+-   name: Disallow root SSH access
+    lineinfile: 
+        dest: /etc/ssh/sshd_config
+        regexp: "^PermitRootLogin"
+        line: "PermitRootLogin no"
+        state: present
+    notify: 
+        - restart ssh
