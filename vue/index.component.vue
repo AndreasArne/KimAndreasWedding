@@ -189,6 +189,7 @@
     <light-row id="wishlist" heading="Önskelista">
         <div class="flex-center-container">
             <p>Sponsra gärna vår bröllopsresa eller köp något från vår <a class="link" href="https://docs.google.com/spreadsheets/d/1faI4zDVE30mfWfNItiSrfpnoxozuoMJ9Tz7Ymz5IKHE/edit?usp=sharing" target="_blank">önskelista</a>.</p>
+            <p>För de som vill skicka pengar till oss kan ni sätta in det på följande konto: 8313-9, 903 709 609-7 eller swisha till 0768377965.</p>
         </div>
         <div class="flex-center-container">
             <img class="icon"
