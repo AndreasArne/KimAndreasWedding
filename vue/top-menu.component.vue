@@ -1,6 +1,7 @@
 <template>
     <div class="top-menu dark-row">
         <ul class="flex-center-container">
+            <li><a href="#facit">Facit</a></li>
             <li><a href="#invitation">Inbjudan</a></li>
             <li><a href="#us">Oss</a></li>
             <li><a href="#our-wedding">Vårt bröllop</a></li>

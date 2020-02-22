@@ -6,6 +6,20 @@
                 src="../assets/branchWithNames.png"
                 alt="Kim & Andreas 2020">
     </div>
+    <color-block-row id="facit">
+        <div class="flex-center-container content-row">
+            <img class="kim-andreas-branch"
+                    src="../assets/korsord.png"
+                    alt="Svar på korsordet"
+                    style="width: 70%">
+        </div>
+    </color-block-row>
+    <div class="flex-center-container content-row">
+        <img class="kim-andreas-branch"
+                src="../assets/burd-brudgumme.png"
+                alt="Bruden eller brudgummen?"
+                style="width: 20%">
+    </div>
     <color-block-row id="invitation" heading="Välkommen till vårt bröllop">
         <div class="two-part-list">
             <div>
