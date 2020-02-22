@@ -35,7 +35,7 @@
                 <p>Vi har reserverat en pool av rum för er som reser långväga. Hotellet vi har valt är Best Western Nya Star Hotel, och vi kommer också att sova där från fredag till söndag.</p>
                 <a href="#hotel" class="button-light button">Läs mer och boka</a>
                 <h2>OSA</h2>
-                <p>OSA senast 1 december 2019. <a class="button-light button" href="./osa">Svara på inbjudan eller se anmälan</a></p>
+                <p>OSA senast 1 december 2019. <s><a class="button-light button">Svara på inbjudan eller se anmälan</a></s></p>
             </div>
         </div>
         <div class="text-center content-row">
@@ -166,44 +166,9 @@
             <img class="pixel-image-large" src="../assets/sleepingLarge.gif">
         </div>
     </color-block-row>
-        <GmapMap
-        :center="{lat:60.148155, lng:16.170317}"
-        id="map"
-        :zoom="15"
-        map-type-id="roadmap"
-        style="width: 100%; height: 300px"
-    >
-        <GmapMarker
-            :key="index"
-            v-for="(m, index) in markers"
-            :position="m.position"
-            :clickable="true"
-            :title="m.title"
-            :label="m.label"
-            @click="openInfoWindow(m)"
-        />
-
-        <GmapInfoWindow
-            :options="infoOptions"
-            :position="infoWindowPos"
-            :opened="infoWinOpen"
-            @closeclick="infoWinOpen=false"
-        >
-        <div v-html="infoContent"></div>
-        </GmapInfoWindow>
-
-        <GmapPolyline 
-            :options="{ strokeColor:'#FF0000'}"
-            :strokeOpacity="1.0"
-            :strokeWeight="10"
-            :path="walking.walkingCoordinates"
-            @click="openInfoWindow(walking)"
-        />
-    </GmapMap>
     <light-row id="wishlist" heading="Önskelista">
         <div class="flex-center-container">
-            <p>Sponsra gärna vår bröllopsresa eller köp något från vår <a class="link" href="https://docs.google.com/spreadsheets/d/1faI4zDVE30mfWfNItiSrfpnoxozuoMJ9Tz7Ymz5IKHE/edit?usp=sharing" target="_blank">önskelista</a>.</p>
-            <p>För de som vill skicka pengar till oss kan ni sätta in det på följande konto: 8313-9, 903 709 609-7 eller swisha till 0768377965.</p>
+            <p>Sponsra gärna vår bröllopsresa eller köp något från vår <s><a class="link">önskelista</a></s>.</p>
         </div>
         <div class="flex-center-container">
             <img class="icon"
